@@ -1,41 +1,49 @@
-site_name: your_site_name # Change this to your site name
-site_description: A cool description of your site
-site_url: https://change_me.io/ # Change this to your site URL
+# Project information
+site_name: h7b
+site_description: h7b public vault
+site_author: h7b
+site_url: https://h7b1.netlify.app
 
+# Repository
+repo_name: h7b/h7b-public-mkdocs
+repo_url: https://github.com/h7b/h7b-public-mkdocs
+edit_uri: ""
+
+# Configuration
 theme:
     name: 'material'
-    logo: assets/meta/favicons.png
+    custom_dir: overrides    
     favicon: assets/meta/favicons.png
-    custom_dir: overrides
+    icon:
+        logo: material/library
+        repo: fontawesome/brands/git-alt
     font:
-        text: Ubuntu
-        code: Ubuntu Mono
+        text: Roboto
+        code: Roboto Mono
     language: en
     palette:
-
     # Light mode
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
-      primary: teal
-      accent: light blue
-      toggle:
-        icon: material/toggle-switch-off-outline
-        name: Switch to dark mode
-
+      - media: "(prefers-color-scheme: light)"
+        scheme: default
+        primary: indigo
+        accent: indigo
+        toggle:
+          icon: material/toggle-switch-off-outline
+          name: Switch to dark mode
     # Dark mode
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
-      primary: blue
-      accent: indigo
-      toggle:
-        icon: material/toggle-switch
-        name: Switch to light mode
+      - media: "(prefers-color-scheme: dark)"
+        scheme: slate
+        primary: indigo
+        accent: indigo
+        toggle:
+          icon: material/toggle-switch
+          name: Switch to light mode
     features:
         - navigation.indexes
         - navigation.top
         - navigation.tabs
-        - navigation.tabs.sticky
         - navigation.expand
+        - navigation.footer
         - search.suggest
         - search.highlight
         
@@ -83,8 +91,7 @@ plugins:
   - git-revision-date-localized:
       type: date
       fallback_to_build_date: true
-      locale: fr
-      custom_format: "%A %d %B %Y"
+      locale: en
       enable_creation_date: true
   - ezlinks:
         wikilinks: true
