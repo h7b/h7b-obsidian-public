@@ -18,8 +18,11 @@ theme:
         logo: material/library
         repo: fontawesome/brands/git-alt
     font:
-        text: Roboto
-        code: Roboto Mono
+        #text: Roboto
+        #text: Atkinson Hyperlegible
+        text: Nunito
+        #code: Roboto Mono
+        code: JetBrains Mono
     language: en
     palette:
     # Light mode
@@ -135,7 +138,7 @@ extra_css:
 extra:
   SEO: assets/meta/SEO.png
   comments: false #disable comments globally
-  generate_graph: false #generate the graph of the site
+  generate_graph: false # disable generate the graph of the site
   attachments: 'assets/img' #path to the folder where the attachments are stored
   blog_list:
     pagination: true #enable pagination
