@@ -18,11 +18,11 @@ theme:
         logo: material/library
         repo: fontawesome/brands/git-alt
     font:
-        #text: Roboto
+        text: Roboto
         #text: Atkinson Hyperlegible
-        text: Nunito
-        #code: Roboto Mono
-        code: JetBrains Mono
+        #text: Nunito
+        code: Roboto Mono
+        #code: JetBrains Mono
     language: en
     palette:
     # Light mode
