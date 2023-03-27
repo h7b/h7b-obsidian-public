@@ -47,8 +47,12 @@ theme:
         - navigation.tabs
         - navigation.expand
         - navigation.footer
+        - navigation.instant
+        - navigation.tracking
         - search.suggest
         - search.highlight
+        - content.code.copy
+        - content.action.view
         
 # Extensions
 markdown_extensions:
