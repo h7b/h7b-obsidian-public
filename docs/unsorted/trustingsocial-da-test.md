@@ -1,8 +1,8 @@
 ---
-aliases: [Trustingsocial data analyst entry test]
+aliases: Trustingsocial data analyst entry test
 createdAt: 2023-03-13T03:45:44+01:00
 dg-publish: true
-modifiedAt: 2023-03-25T05:02:02+01:00
+modifiedAt: 2023-03-28T00:33:45+02:00
 title: "Trustingsocial data analyst entry test"
 ---
 # Trustingsocial data analyst entry test
@@ -109,7 +109,7 @@ Q: Show which source brings to the marketplace more low risk customers
 A:
 
 ```sql
-SELECT c.source, COUNT(*) AS num_low_risk_customers
+SELECT c.source, COUNT(DISTINCT c.customer_id) AS num_low_risk_customers
 FROM customers c
 INNER JOIN leads l ON c.customer_id = l.customer_id
 INNER JOIN products p ON l.product_id = p.product_id
@@ -124,13 +124,11 @@ Q: Show all months of the year 2017 that the number of customers applying for lo
 
 A:
 
-[DATE_FORMAT()](https://www.w3schools.com/sql/func_mysql_date_format.asp) function
-
-[OVER clause in mysql](https://learnsql.com/blog/over-clause-mysql/)
-
-[SELECT DISTINCT](https://www.w3schools.com/sql/sql_distinct.asp) statement
-
-[Subquery](https://www.mysqltutorial.org/mysql-subquery/) in mysql
+Related tutorials:
+- [DATE_FORMAT()](https://www.w3schools.com/sql/func_mysql_date_format.asp) function
+- [OVER clause in mysql](https://learnsql.com/blog/over-clause-mysql/)
+- [SELECT DISTINCT](https://www.w3schools.com/sql/sql_distinct.asp) statement
+- [Subquery](https://www.mysqltutorial.org/mysql-subquery/) in mysql
 
 v1:
 
@@ -195,10 +193,10 @@ FROM Customers c
 INNER JOIN Leads l ON c.customer_id = l.customer_id
 WHERE YEAR(l.apply_date) = 2017
 AND c.customer_age > (
-  SELECT PERCENTILE_CONT(0.9) WITHIN GROUP (ORDER BY customer_age DESC)
-  FROM Customers c
-  INNER JOIN Leads l ON c.customer_id = l.customer_id
-  WHERE YEAR(l.apply_date) = 2016
+    SELECT PERCENTILE_CONT(0.9) WITHIN GROUP (ORDER BY customer_age DESC)
+    FROM Customers c
+    INNER JOIN Leads l ON c.customer_id = l.customer_id
+    WHERE YEAR(l.apply_date) = 2016
 )
 ```
 
@@ -206,7 +204,11 @@ AND c.customer_age > (
 
 ### 2a
 
+Q: allocation of marketing budget based on customer segmentation
+
 ### 2b
+
+Q: Do you have any comments or suggestions so that we can improve the website’s performance in order to maximize net profit?
 
 A:
 
@@ -223,4 +225,13 @@ Based on the data of the performance of digital marketing channel and age range,
 
 ## Q3
 
-Question: allocation of marketing budget based on customer segmentation
+Q: Please find attached the file "messy.xlsx", use R, Python or your programming language of choice to do the following:
+- Clean the names of columns to lowercase separated by `_`, remove any empty column if necessary.
+- Change the date column to the same format `YYYY-MM-DD`.
+- Change the name column to the title case (e.g: Jason Mraz).
+- Make a new “email” column with form: `{last_name}.{first_name}.{id}@yourcompany.com`
+- Change the phone number column to the format `84……`
+- Find any duplicated ID and remove those who join later.
+- Filter those who join since 2019 and export to a csv file, delimited by `|`, file name `emp_{report_date}.csv` with `report_date = today`.
+
+A: 
