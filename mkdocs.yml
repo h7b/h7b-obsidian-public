@@ -144,6 +144,7 @@ extra:
   comments: false #disable comments globally
   generate_graph: false # disable generate the graph of the site
   attachments: 'assets/img' #path to the folder where the attachments are stored
+  no-auto-h1: true #disable the automatic generation of h1 if no h1 is found
   blog_list:
     pagination: true #enable pagination
     pagination_message: true #display the message "Showing x posts out of y"
