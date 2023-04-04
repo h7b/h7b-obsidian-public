@@ -2,7 +2,7 @@
 aliases: Migrate notes out of Dendron into Obsidian
 createdAt: 2023-03-25T20:05:32+01:00
 dg-publish: true
-modifiedAt: 2023-04-04T17:46:47+02:00
+modifiedAt: 2023-04-04T18:18:06+02:00
 title: "Migrate notes out of Dendron into Obsidian"
 ---
 # Migrate notes out of Dendron into Obsidian
@@ -20,7 +20,7 @@ I decided to convert all notes from Dendron into Obsidian since Dendron dev team
         - convert mermaid block code into html block code
     - there's also a [python script](https://forum.obsidian.md/t/any-plugin-to-import-dendron-vault-into-obsidian/47060/2) to convert only filename, and don't touch the yaml data, or convert the Dendron syntax. But I did not use
     - I have to manually edit multiple links from Dendron style into Obsidian
-    - I removed the [css tag to resize image to 300px supported by Dendron](./image.md#resize-image-and-display), since Obsidian use a different syntax
+    - I removed the [[./image#Resize image and display|css tag to resize image to 300px supported by Dendron]], since Obsidian use a different syntax
 
 ## In Obsidian
 
@@ -30,7 +30,7 @@ I decided to convert all notes from Dendron into Obsidian since Dendron dev team
     - also set `Tab indent size` to `4`
 - `Settings` -> `Appearance` -> disable `Show inline title`
     - reason: the file's title should not be visualized repeatedly in the note's content
-- `Settings` -> `Files & Links` -> enable `Use [Wikilinks](Wikilinks.md#)`
+- `Settings` -> `Files & Links` -> enable `Use [[Wikilinks]]`
     - reason: allow Obsidian to use wikilink format
 - use [Linter](https://github.com/platers/obsidian-linter) plugin to:
     - automatically add in frontmatter these keys `createdAt`, `modifiedAt`, `title`
@@ -55,5 +55,5 @@ I decided to convert all notes from Dendron into Obsidian since Dendron dev team
     - enable only the `YAML Front Matter support`, since I need only to auto-suggest when editing key-value pair in the frontmatter
     - [Various Complements](https://github.com/tadashi-aikawa/obsidian-various-complements-plugin) plugin with the feature [Front matter complement](https://tadashi-aikawa.github.io/docs-obsidian-various-complements-plugin/1.%20Features/Front%20matter%20complement/) can achieve the same thing
 - use [GitHub Publisher](https://github.com/ObsidianPublisher/obsidian-github-publisher) plugin
-    -  [to publish notes with mkdocs-materials](mkdocs-pub.md#)
-- use [LanguageTool integration](languagetool-obsidian.md#) plugin to enable grammar and spell checking for Obsidian notes
+    -  [[mkdocs-pub|to publish notes with mkdocs-materials]]
+- use [[languagetool-obsidian|LanguageTool integration]] plugin to enable grammar and spell checking for Obsidian notes
