@@ -1,8 +1,7 @@
 ---
-aliases: Migrate notes out of Dendron into Obsidian
 createdAt: 2023-03-25T20:05:32+01:00
 dg-publish: true
-modifiedAt: 2023-04-04T18:18:06+02:00
+modifiedAt: 2023-04-06T01:46:26+02:00
 title: "Migrate notes out of Dendron into Obsidian"
 ---
 # Migrate notes out of Dendron into Obsidian
@@ -15,8 +14,8 @@ I decided to convert all notes from Dendron into Obsidian since Dendron dev team
 
 - use [Markdown Export Pod](https://wiki.dendron.so/notes/Un0n1ql7LfvMtmA9JEi4n/) to export and convert the notes from dendron-hierarchy-dot-style filenames to standard file-folder markdown files
     - the export pod's limitations:
-        - removed all data from yaml frontmatter, 
-        - convert Dendron-flavored wikilink into markdown link, 
+        - removed all data from yaml frontmatter,
+        - convert Dendron-flavored wikilink into markdown link,
         - convert mermaid block code into html block code
     - there's also a [python script](https://forum.obsidian.md/t/any-plugin-to-import-dendron-vault-into-obsidian/47060/2) to convert only filename, and don't touch the yaml data, or convert the Dendron syntax. But I did not use
     - I have to manually edit multiple links from Dendron style into Obsidian
@@ -42,6 +41,8 @@ I decided to convert all notes from Dendron into Obsidian since Dendron dev team
     - [Format Yaml Array](https://github.com/platers/obsidian-linter/blob/master/docs/rules.md#format-yaml-array) > disable `Format yaml aliases section`
     - [YAML Title Alias](https://github.com/platers/obsidian-linter/blob/master/docs/rules.md#yaml-title-alias) > enable `Inserts the title of the file into the YAML frontmatter's aliases section`
         - Try to not use comma `,` in heading H1. Reason: with comma inside H1, the auto-added alias will be wrong, since the alias section is a Yaml array which is also separated by comma.
+    - enable [No Bare URLs](https://github.com/platers/obsidian-linter/blob/master/docs/rules.md#no-bare-urls). Always encloses bare URLs with angle brackets except when enclosed in back ticks, square braces, or single or double quotes.
+    - enable [Heading blank lines](https://github.com/platers/obsidian-linter/blob/master/docs/rules.md#heading-blank-lines). All headings have a blank line both before and after (except where the heading is at the beginning or end of the document).
 - use [Dataview](https://blacksmithgu.github.io/obsidian-dataview/) plugin:
     - config `Date + Time Format` as: `ccc yyyy-MMM-dd HH:mmZZ`
     - explain: dataview use [luxon format](https://github.com/moment/luxon/blob/master/docs/formatting.md)
@@ -55,5 +56,5 @@ I decided to convert all notes from Dendron into Obsidian since Dendron dev team
     - enable only the `YAML Front Matter support`, since I need only to auto-suggest when editing key-value pair in the frontmatter
     - [Various Complements](https://github.com/tadashi-aikawa/obsidian-various-complements-plugin) plugin with the feature [Front matter complement](https://tadashi-aikawa.github.io/docs-obsidian-various-complements-plugin/1.%20Features/Front%20matter%20complement/) can achieve the same thing
 - use [GitHub Publisher](https://github.com/ObsidianPublisher/obsidian-github-publisher) plugin
-    -  [[mkdocs-pub|to publish notes with mkdocs-materials]]
+    -  [[../obsidian-md/tips-obs/mkdocs-pub|to publish notes with mkdocs-materials]]
 - use [[languagetool-obsidian|LanguageTool integration]] plugin to enable grammar and spell checking for Obsidian notes
