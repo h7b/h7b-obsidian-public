@@ -1,7 +1,7 @@
 ---
 createdAt: 2023-03-25T20:05:32+01:00
 dg-publish: true
-modifiedAt: 2023-04-06T01:46:26+02:00
+modifiedAt: 2023-05-02T02:35:40+02:00
 title: "Migrate notes out of Dendron into Obsidian"
 ---
 # Migrate notes out of Dendron into Obsidian
@@ -58,3 +58,15 @@ I decided to convert all notes from Dendron into Obsidian since Dendron dev team
 - use [GitHub Publisher](https://github.com/ObsidianPublisher/obsidian-github-publisher) plugin
     -  [[../obsidian-md/tips-obs/mkdocs-pub|to publish notes with mkdocs-materials]]
 - use [[languagetool-obsidian|LanguageTool integration]] plugin to enable grammar and spell checking for Obsidian notes
+- use [Find orphaned files (files with no backlinks) and broken links](https://github.com/Vinzent03/find-unlinked-files) plugin
+    - to find broken internal links in my vault, which link to files that have not been created yet
+    - reason: when exported notes from dendron, the markdown links pointed to notes - which then were moved to another location due to my usage of plugin [AidenLx's Folder Note](https://github.com/aidenlx/alx-folder-note) - are broken without any notice
+- use [Text format](https://github.com/Benature/obsidian-text-format) plugin
+    - to [enhance the experience of copy/paste text from pdf files](https://github.com/Benature/obsidian-text-format#pdf-copy--ocr), such as: remove redundant spaces, merge broken paragraphs.
+- use [Better command palette](https://github.com/AlexBieg/obsidian-better-command-palette/)
+    - to replace the official plugin `Command Palette`
+    - hide some unwanted command in `Command Palette`
+    - show recently used command/files
+    - have built-in `Quick Switcher` feature, allows me to disable the separate official plugin `Quick Switcher`
+- use [Periodic Notes](https://github.com/liamcain/obsidian-periodic-notes) and [Calendar](https://github.com/liamcain/obsidian-calendar-plugin)
+    - to create weekly notes from template
