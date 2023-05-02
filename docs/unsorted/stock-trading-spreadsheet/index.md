@@ -1,7 +1,7 @@
 ---
 createdAt: 2023-03-16T01:43:53+01:00
 dg-publish: true
-modifiedAt: 2023-04-09T13:09:11+02:00
+modifiedAt: 2023-04-24T17:43:23+02:00
 title: "Trading Journal to Measure Stock Trading Performance With Google Sheets"
 ---
 # Trading Journal to Measure Stock Trading Performance With Google Sheets
@@ -47,12 +47,12 @@ From the article of [Tools to research Vietnam stock market for retail investor]
 
 2022-12-24 update:
 
-- refactor the formula to calculate `Realized Gain/Loss`, applying the accounting FIFO (first in, first out). It means that the shares I bought earliest will be the shares I sell first. Read more at [here](/unsorted/stock-trading-spreadsheet/fifo-cost-basis.md)
+- refactor the formula to calculate `Realized Gain/Loss`, applying the accounting FIFO (first in, first out). It means that the shares I bought earliest will be the shares I sell first. I also wrote a note about [[fifo-cost-basis|how to compute the cost basis of stocks with FIFO method]]
 - add a [dedicated note](data-structure.md#) explaining how did I record transaction into `orderBook`.
 
 2023-01-03 update:
 
-- Add [custom script](/unsorted/stock-trading-spreadsheet/track-daily-history.md)
+- Add [[track-daily-history|custom script]]
   - to automatically record a daily history of values in `pnl` sheet
   - to force refreshing `IMPORTXML` function in `tmp_currentPrice` sheet, while the document is not opened
 - Reason: watch the daily performance of my portfolio, to learn when I missed the chance to realize the profit.
@@ -63,20 +63,24 @@ From the article of [Tools to research Vietnam stock market for retail investor]
 
 2023-01-16 update:
 
-- Refactor the [custom script](/unsorted/stock-trading-spreadsheet/track-daily-history.md) to automatically record a daily history of values in `pnl` sheet
+- Refactor the [[track-daily-history|custom script]] to automatically record a daily history of values in `pnl` sheet
 - Reason: enhance the performance of the batch operations.
 
 2023-01-17 update:
 
-- Refactor the [custom script](/unsorted/stock-trading-spreadsheet/track-daily-history.md) to automatically record a daily history of values in `pnl` sheet
+- Refactor the [[track-daily-history|custom script]] to automatically record a daily history of values in `pnl` sheet
 - Reason: replace the configuration of installable trigger from UI to apps script
 
 2023-04-09 update:
 - separate the `orderBook` sheet and `pnl` into 2 different files. Ask Dad to manually enter transaction data into a form provided by [tally.so](https://tally.so/). These data will be synced manually into the `orderBook` sheet.
     - the data from `oderBook` sheet then will be imported into `pnl` sheet for calculation of the trading performance
-    - update the custom formula to separate the performance by brokerage account
     - reason: it's more fun when Dad can engage and play together. Dad currently use 3 brokerage services provided by ssi, abs and vcbs.
 - the data source for current market price change from [investing.com](https://www.investing.com/) to [cafef.vn](https://cafef.vn/). Reason: much more stable when crawling price data using the `importxml` function
+- update the custom formula to separate the performance by brokerage account, to take into account of 2 transaction type `cash dividend` and `stock dividend`
+
+2023-04-24 update:
+- separate the `pnl_daily` sheet into a different file. I hope this could increase the performance of the calculation in main trading journal spreadsheet
+- create a `Looker Studio` report with both `desktopView` and `mobileView` to visualize the movement of portfolio's performance
 
 ## Related
 
