@@ -2,7 +2,7 @@
 aliases: Trustingsocial data analyst entry test
 createdAt: 2023-03-13T03:45:44+01:00
 dg-publish: true
-modifiedAt: 2023-03-28T00:33:45+02:00
+modifiedAt: 2023-04-18T18:05:05+02:00
 title: "Trustingsocial data analyst entry test"
 ---
 # Trustingsocial data analyst entry test
@@ -14,7 +14,7 @@ Topic covered by test:
 - Question 2: Business case study
 - Question 3: Data cleaning using python
 
-## Q1
+## Q1 SQL quizzes
 
 Data schema:
 - BANKS - PRODUCTS: relationship 1:n
@@ -152,7 +152,7 @@ HAVING COUNT(DISTINCT customer_id) > 1.2 * (
 
 ```
 
-Explain: 
+Explain:
 - calculate the average number of customers in a separate query, instead of  using an aggregate function (`COUNT`) within another aggregate function (`AVG`) without the appropriate `GROUP BY` clauses
 - This query first calculates the number of customers per month for the year 2017, then calculates the average number of customers using a subquery, and finally filters the results to only show months with more than 1.2 times the average number of customers.
 
@@ -180,12 +180,14 @@ Explain:
 - We then select the `num_customers` column and the `avg_num_customers` column using their aliases in the `SELECT` statement
 - The `ORDER BY` clause is added to sort the results by month in ascending order.
 
-### 1f work in progress
+### 1f
 
 Q: Show the names of all leads who applied in 2017 and are older than 90% of all leads who
 applied in 2016
 
-A:
+A: work in progress
+
+The `PERCENTILE_CONT` does not exist in `mysql`
 
 ```sql
 SELECT c.customer_name
@@ -200,38 +202,29 @@ AND c.customer_age > (
 )
 ```
 
-## Q2
+## Q2 Business case
 
 ### 2a
 
 Q: allocation of marketing budget based on customer segmentation
 
+A: You can evaluate and execute the code [in this notebook](https://deepnote.com/workspace/huy-f7e5bafc-3b5f-4e8e-86f0-50e9b599d9b9/project/h7b-public-49f4688a-615a-493c-b3e7-a9e18cd5b3d1/notebook/trusting-social-da-test-c2b7b224c64b46cca75238e7df810744). You can also read the written explanation in this [document](https://app.box.com/s/zsm695zi1k91unnmlh57ftbvddajkuxc).
+
 ### 2b
 
 Q: Do you have any comments or suggestions so that we can improve the website’s performance in order to maximize net profit?
 
-A:
+A: blah blah, just some gibberish writing.
 
-Based on the data of the performance of digital marketing channel and age range, here are some suggestions that I have thought to improve the website's performance:
-
-- Targeted Marketing:
-    - What we were doing in question 2a is also a part of this action item
-    - Analyze the data to determine the demographics of the audience that responds the best to our marketing channels. Then focus our efforts on these demographics and try to target them with personalized campaigns.
-- Improve User Experience:
-    - Conduct a customer survey to ensure that the site is intuitive, user-friendly, and visually appealing. This will help the company to understand the customer journey experience and reduce the bounce rate
-    - Optimize the website for mobile devices, with fast loading times and easy to navigate.
-- Measure and Track Results:
-    - Continuously do A/B test and track the performance of our marketing campaigns and website to determine what works and what doesn't
-
-## Q3
+## Q3 Python quizzes
 
 Q: Please find attached the file "messy.xlsx", use R, Python or your programming language of choice to do the following:
-- Clean the names of columns to lowercase separated by `_`, remove any empty column if necessary.
-- Change the date column to the same format `YYYY-MM-DD`.
-- Change the name column to the title case (e.g: Jason Mraz).
-- Make a new “email” column with form: `{last_name}.{first_name}.{id}@yourcompany.com`
-- Change the phone number column to the format `84……`
-- Find any duplicated ID and remove those who join later.
-- Filter those who join since 2019 and export to a csv file, delimited by `|`, file name `emp_{report_date}.csv` with `report_date = today`.
+- (a) Clean the names of columns to lowercase separated by `_`, remove any empty column if necessary.
+- (b) Change the date column to the same format `YYYY-MM-DD`.
+- (c) Change the name column to the title case (e.g: Jason Mraz).
+- (d) Make a new “email” column with form: `{last_name}.{first_name}.{id}@yourcompany.com`
+- (e) Change the phone number column to the format `84……`
+- (f) Find any duplicated ID and remove those who join later.
+- (g) Filter those who join since 2019 and export to a csv file, delimited by `|`, file name `emp_{report_date}.csv` with `report_date = today`.
 
-A: 
+A: You can evaluate and execute the code [in this notebook](https://deepnote.com/workspace/huy-f7e5bafc-3b5f-4e8e-86f0-50e9b599d9b9/project/h7b-public-49f4688a-615a-493c-b3e7-a9e18cd5b3d1/notebook/trusting-social-da-test-c2b7b224c64b46cca75238e7df810744)
