@@ -53,6 +53,7 @@ theme:
         - search.highlight
         - content.code.copy
         - content.action.view
+        - toc.follow
         
 # Extensions
 markdown_extensions:
