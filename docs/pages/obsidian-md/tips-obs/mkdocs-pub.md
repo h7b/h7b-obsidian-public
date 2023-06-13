@@ -7,7 +7,7 @@ title: "Publish vault with Obsidian Github Publisher and mkdocs"
 ---
 # Publish vault with Obsidian Github Publisher and mkdocs
 
-In a beautiful day, I have interest to publish [[../../../unsorted/stock-trading-spreadsheet/Trading Journal to Measure Stock Trading Performance With Google Sheets|a trading journal]] using [mkdocs](https://www.mkdocs.org/). In my setup, I use the [GitHub Publisher](github-publisher.md#) plugin to send the notes written in Obsidian, into a GitHub repository, then deploy on [Netlify](https://www.netlify.com/) and [Cloudflare Pages](https://pages.cloudflare.com/).
+In a beautiful day, I have interest to publish [[../../../unsorted/stock-trading-spreadsheet/index|a trading journal]] using [mkdocs](https://www.mkdocs.org/). In my setup, I use the [GitHub Publisher](github-publisher.md#) plugin to send the notes written in Obsidian, into a GitHub repository, then deploy on [Netlify](https://www.netlify.com/) and [Cloudflare Pages](https://pages.cloudflare.com/).
 
 ## Steps to install and configure
 

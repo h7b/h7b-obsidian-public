@@ -1,8 +1,8 @@
 ---
-aliases: [Hey 👋, root]
+aliases: [root]
 createdAt: 2023-03-16T01:43:53+01:00
 dg-publish: true
-modifiedAt: 2023-04-21T21:10:39+02:00
+modifiedAt: 2023-06-13T23:27:45+02:00
 title: "Hey 👋"
 ---
 # Hey 👋

@@ -15,7 +15,7 @@ Tình huống:
 
 Một tình huống khá thú vị mà mình chưa tìm thấy được câu trả lời trên google. Đành tò mò tự ngồi kéo bảng tính để xem người lao động bị thiệt hại nhiều đến mức nào.
 
-Cơ sở để tính dựa trên note về [[Quy định về Hợp đồng lao động và các chế độ bảo hiểm ở Vietnam|Mức đóng bảo hiểm xã hội bắt buộc, bảo hiểm y tế, bảo hiểm thất nghiệp năm 2023 và Cách tính lương hưu]]
+Cơ sở để tính dựa trên note về [[hop-dong-lao-dong-va-bao-hiem-xa-hoi-Vietnam|Mức đóng bảo hiểm xã hội bắt buộc, bảo hiểm y tế, bảo hiểm thất nghiệp năm 2023 và Cách tính lương hưu]]
 
 Nhắc lại:
 
@@ -61,4 +61,4 @@ Tóm lại, nếu được quyền lựa chọn thì tôi nghĩ chẳng ai lại
 
 ## Related
 
-- [[Quy định về Hợp đồng lao động và các chế độ bảo hiểm ở Vietnam|Quy định về Hợp đồng lao động và các chế độ bảo hiểm ở Vietnam]]
+- [[hop-dong-lao-dong-va-bao-hiem-xa-hoi-Vietnam|Quy định về Hợp đồng lao động và các chế độ bảo hiểm ở Vietnam]]
