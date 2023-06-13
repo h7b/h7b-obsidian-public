@@ -19,7 +19,7 @@ I decided to convert all notes from Dendron into Obsidian since Dendron dev team
         - convert mermaid block code into html block code
     - there's also a [python script](https://forum.obsidian.md/t/any-plugin-to-import-dendron-vault-into-obsidian/47060/2) to convert only filename, and don't touch the yaml data, or convert the Dendron syntax. But I did not use
     - I have to manually edit multiple links from Dendron style into Obsidian
-    - I removed the [[./image#Resize image and display|css tag to resize image to 300px supported by Dendron]], since Obsidian use a different syntax
+    - I removed the [[./How to customize image in Dendron#Resize image and display|css tag to resize image to 300px supported by Dendron]], since Obsidian use a different syntax
 
 ## In Obsidian
 
@@ -56,8 +56,8 @@ I decided to convert all notes from Dendron into Obsidian since Dendron dev team
     - enable only the `YAML Front Matter support`, since I need only to auto-suggest when editing key-value pair in the frontmatter
     - [Various Complements](https://github.com/tadashi-aikawa/obsidian-various-complements-plugin) plugin with the feature [Front matter complement](https://tadashi-aikawa.github.io/docs-obsidian-various-complements-plugin/1.%20Features/Front%20matter%20complement/) can achieve the same thing
 - use [GitHub Publisher](https://github.com/ObsidianPublisher/obsidian-github-publisher) plugin
-    -  [[../obsidian-md/tips-obs/mkdocs-pub|to publish notes with mkdocs-materials]]
-- use [[languagetool-obsidian|LanguageTool integration]] plugin to enable grammar and spell checking for Obsidian notes
+    -  [[../obsidian-md/tips-obs/Publish vault with Obsidian Github Publisher and mkdocs|to publish notes with mkdocs-materials]]
+- use [[LanguageTool integration|LanguageTool integration]] plugin to enable grammar and spell checking for Obsidian notes
 - use [Find orphaned files (files with no backlinks) and broken links](https://github.com/Vinzent03/find-unlinked-files) plugin
     - to find broken internal links in my vault, which link to files that have not been created yet
     - reason: when exported notes from dendron, the markdown links pointed to notes - which then were moved to another location due to my usage of plugin [AidenLx's Folder Note](https://github.com/aidenlx/alx-folder-note) - are broken without any notice

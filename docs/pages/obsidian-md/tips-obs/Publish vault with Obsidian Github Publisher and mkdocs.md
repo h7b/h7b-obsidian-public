@@ -2,12 +2,12 @@
 aliases: Publish vault with Obsidian Github Publisher and mkdocs
 createdAt: 2023-03-16T01:43:50+01:00
 dg-publish: true
-modifiedAt: 2023-04-09T12:44:01+02:00
+modifiedAt: 2023-05-03T21:40:09+02:00
 title: "Publish vault with Obsidian Github Publisher and mkdocs"
 ---
 # Publish vault with Obsidian Github Publisher and mkdocs
 
-In a beautiful day, I have interest to publish [[../../../unsorted/stock-trading-spreadsheet/index|a trading journal]] using [mkdocs](https://www.mkdocs.org/). In my setup, I use the [GitHub Publisher](github-publisher.md#) plugin to send the notes written in Obsidian, into a GitHub repository, then deploy on [Netlify](https://www.netlify.com/) and [Cloudflare Pages](https://pages.cloudflare.com/).
+In a beautiful day, I have interest to publish [[../../../unsorted/stock-trading-spreadsheet/Trading Journal to Measure Stock Trading Performance With Google Sheets|a trading journal]] using [mkdocs](https://www.mkdocs.org/). In my setup, I use the [GitHub Publisher](github-publisher.md#) plugin to send the notes written in Obsidian, into a GitHub repository, then deploy on [Netlify](https://www.netlify.com/) and [Cloudflare Pages](https://pages.cloudflare.com/).
 
 ## Steps to install and configure
 
@@ -106,6 +106,7 @@ In `mkdocs.yml`
     - reason: this option allows Material for MkDocs to behave like a Single Page Application, ie. clicks on all internal links will be intercepted and opened without fully reloading the page
 - [Anchor tracking](https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#anchor-tracking)
     - reason: the URL in the address bar is automatically updated with the active anchor as highlighted in the table of contents
+- [Anchor following](https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#anchor-following)
 - [Navigation tabs](https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#navigation-tabs)
 - [Back-to-top button](https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#back-to-top-button)
 - [Code copy button](https://squidfunk.github.io/mkdocs-material/reference/code-blocks/?h=copy+bu#code-copy-button)
@@ -115,11 +116,7 @@ In `mkdocs.yml`
     - When publishing using [[github-publisher|GitHub Publisher plugin]], this [folder note feature](https://obsidian-publisher.netlify.app/github%20publisher/settings/upload/#folder-note) is also integrated
 - enable [no-auto-h1](https://github.com/ObsidianPublisher/obsidian-github-publisher/discussions/128#discussioncomment-5473672), which disable the automatic generation of h1 if no h1 is found. This help to solve [the problem of duplicated page's title and heading H1](https://github.com/ObsidianPublisher/obsidian-github-publisher/discussions/128)
 - enable the option to use only Unicode characters and all lower case in slugs
-    - [toc.slugify](https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/#+toc.slugify): applied for "Table of Contents"
-    - [pymdownx.tabbed.slugify](https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/?h=slugify#+pymdownx.tabbed.slugify): applied for "content tabs"
-    - [blog.post_slugify](https://squidfunk.github.io/mkdocs-material/setup/setting-up-a-blog/?h=slugify#+blog.post_slugify): applied for "blog post titles". Not available for free user at the moment since the [built-in blog plugin](https://squidfunk.github.io/mkdocs-material/setup/setting-up-a-blog/) is currently in "Sponsors only" tier (version insiders-4.23.0)
-    - [blog.categories_slugify](https://squidfunk.github.io/mkdocs-material/setup/setting-up-a-blog/?h=slugify#+blog.categories_slugify): applied for "categories in blog". Not available for free user at the moment
-    - [tags.tags_slugify](https://squidfunk.github.io/mkdocs-material/setup/setting-up-tags/?h=slugify#+tags.tags_slugify): applied for generating URL-compatible slugs from tags
+    - [toc.slugify](https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/#+toc.slugify): applied for "Table of Contents". Otherwise, I can also use the `Slugify anchor in markdown links` option from the [github-publisher plugin for Obsidian](https://github.com/ObsidianPublisher/obsidian-github-publisher)  to achieve the same behavior, as discussed with the plugin's author in [Discussion #131](https://github.com/ObsidianPublisher/obsidian-github-publisher/discussions/131)
 
 ### In-consideration plugins
 
@@ -128,6 +125,11 @@ In `mkdocs.yml`
 - Read this [tutorial](https://obsidian-publisher.netlify.app/mkdocs%20template/#upgrading) to learn how to update the GitHub Publisher template repo
 - Read this [tutorial](https://obsidian-publisher.netlify.app/advanced%20setup/customization/#comments) to learn how to add a "Comments" section under each post. Though I don't recommend using this, since it makes the UI so cluttered
 - Since the [built-in blog plugin](https://squidfunk.github.io/mkdocs-material/setup/setting-up-a-blog/) is currently in "Sponsors only" tier (version insiders-4.23.0), GitHub Publisher plugin implement a [special template workaround](https://obsidian-publisher.netlify.app/advanced%20setup/customization/#article-list) to display the post as a timeline of blog.
+- the option to use only Unicode characters and all lower case in slugs
+    - [pymdownx.tabbed.slugify](https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/?h=slugify#+pymdownx.tabbed.slugify): applied for "content tabs"
+    - [blog.post_slugify](https://squidfunk.github.io/mkdocs-material/setup/setting-up-a-blog/?h=slugify#+blog.post_slugify): applied for "blog post titles". Not available for free user at the moment since the [built-in blog plugin](https://squidfunk.github.io/mkdocs-material/setup/setting-up-a-blog/) is currently in "Sponsors only" tier (version insiders-4.23.0)
+    - [blog.categories_slugify](https://squidfunk.github.io/mkdocs-material/setup/setting-up-a-blog/?h=slugify#+blog.categories_slugify): applied for "categories in blog". Not available for free user at the moment
+    - [tags.tags_slugify](https://squidfunk.github.io/mkdocs-material/setup/setting-up-tags/?h=slugify#+tags.tags_slugify): applied for generating URL-compatible slugs from tags
 
 ### Upgrade the GitHub Publisher template repo
 

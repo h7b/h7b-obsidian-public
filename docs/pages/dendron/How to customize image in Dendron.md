@@ -68,7 +68,7 @@ Trick:
   [dendron-github-all-images](https://github.com/dendronhq/dendron-site/blob/master/vault/asset.preview.md#tutorial-dendron-layout-dark)
 - Then use Dendron note ref throughout docs for specific images
   ```md
-  [asset.preview#tutorial-dendron-layout-dark,1:#*](dendron://dendron.dendron-site/asset.preview.md#tutorial-dendron-layout-dark,1:#*)
+  [[dendron://dendron.dendron-site/asset.preview#tutorial-dendron-layout-dark,1:#*]]
   ```
     Example embedded image in other notes:
   [dendron-image-other-note](https://github.com/dendronhq/dendron-site/blob/a9373e4ae16c1dd00eca79d9328336c5f54277d3/vault/dendron.tutorial.user-interface.md?plain=1#L14)
