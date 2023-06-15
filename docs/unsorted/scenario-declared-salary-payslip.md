@@ -1,10 +1,16 @@
 ---
 createdAt: 2023-06-12T21:23:16+02:00
 dg-publish: true
-modifiedAt: 2023-06-13T21:08:25+02:00
-title: "Difference in benefits when employer declares low gross salary on your payslip"
+modifiedAt: 2023-06-15T17:43:11+02:00
+title: "Người lao động bị thiệt gì khi kê khai lương gộp thấp?"
 ---
-# Difference in benefits when employer declares low gross salary on your payslip
+# Người lao động bị thiệt gì khi kê khai lương gộp thấp?
+
+What are the drawbacks for an employee when the employer declares low gross salary on your payslip?
+
+## TLDR
+
+Trong kiểu hợp đồng lao đồng khai lương thấp này thì lương thực nhận càng cao, người lao động càng thiệt thòi nhiều. Nếu lương thực nhận là 15trieu, mà chỉ kê khai 5.4trieu thì nghĩa là ở hiện tại, mỗi tháng người lao động bị thiệt 1.7trieu.
 
 ## Overview
 
