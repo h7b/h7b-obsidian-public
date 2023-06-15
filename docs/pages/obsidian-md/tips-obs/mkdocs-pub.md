@@ -2,7 +2,7 @@
 aliases: Publish vault with Obsidian Github Publisher and mkdocs
 createdAt: 2023-03-16T01:43:50+01:00
 dg-publish: true
-modifiedAt: 2023-05-03T21:40:09+02:00
+modifiedAt: 2023-06-14T19:45:25+02:00
 title: "Publish vault with Obsidian Github Publisher and mkdocs"
 ---
 # Publish vault with Obsidian Github Publisher and mkdocs
@@ -28,6 +28,7 @@ In a beautiful day, I have interest to publish [[../../../unsorted/stock-trading
     - In `Upload Configuration` tab,
         - set `Folder behavior` to `Obsidian Path`. I want to replicate the folder structure of Obsidian vault to the published site [^3]
         - set `Default folder` to `docs`
+        - disable the toggle `Set the key where to get the value of the filename`. Reason: I want to preserve the note's filename as is when upload to repo. If I toggle on, the note's filename will be changed according the `title` key in the note frontmatter
     - In `Content's conversion` tab,
         -  enable `Internal Links`
         - disable `[[Wikilinks]] to [MDlinks](links)`. Reason: possible error when mkdocs-material render anchor link from mdlink syntax [^8]
@@ -49,18 +50,7 @@ In a beautiful day, I have interest to publish [[../../../unsorted/stock-trading
 8. (Optional) Disable the workflow `Building Mkdocs Page` in GitHub Actions [^5], since I deploy solely via Netlify. This only helps the repo status clean. It does not affect on the success of build process.
 9. Create a custom front page
     - Follow this [issue](https://github.com/squidfunk/mkdocs-material/issues/1996) and replicate a `home.html` with examples from [up42-py](https://github.com/up42/up42-py/blob/master/docs/theme_override_home/home.html), [le-ref-architecture-doc](https://github.com/binbashar/le-ref-architecture-doc/blob/master/material/overrides/home.html), [mkdocs-material](https://github.com/squidfunk/mkdocs-material/blob/master/src/.overrides/home.html)
-
-[^1]: <https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template>
-
-[^2]: <https://dg-docs.ole.dev/advanced/fine-grained-access-token/>
-
-[^3]: <https://obsidian-publisher.netlify.app/obsidian/#upload-configuration>
-
-[^4]: <https://github.com/ObsidianPublisher/obsidian-github-publisher/discussions/70#discussioncomment-4656676>
-
-[^5]: <https://docs.github.com/en/actions/managing-workflow-runs/disabling-and-enabling-a-workflow>
-
-[^8]: read my [discussion](https://github.com/ObsidianPublisher/obsidian-github-publisher/discussions/131#discussioncomment-5494065) for details
+10. 2023-06-14 I learned that GithubPublisher dev changed the Javascript loading order, so in `extra_javascript` I need to reorder the line `https://cdn.jsdelivr.net/gh/ObsidianPublisher/assets@main/dist/javascript.js` into first line [^9]
 
 ### with Cloudflare Pages
 
@@ -74,7 +64,7 @@ In a beautiful day, I have interest to publish [[../../../unsorted/stock-trading
 
 ## Customize GitHub Publisher template repo
 
-In the [template repo for Netlify](https://github.com/ObsidianPublisher/publisher-template-netlify), the author included [many plugins](https://obsidian-publisher.netlify.app/advanced%20setup/).
+In the [template repo for Netlify](https://github.com/ObsidianPublisher/publisher-template-netlify), the author included [many plugins](https://obsidian-publisher.netlify.app/advanced%20setup/) into the [mkdocs-material template](https://squidfunk.github.io/mkdocs-material/).
 
 ### Disable plugins
 
@@ -95,8 +85,6 @@ In `mkdocs.yml`
 - [Navigation expansion](https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#navigation-expansion)
 - Disable [built-in tags plugin](https://squidfunk.github.io/mkdocs-material/setup/setting-up-tags/#+tags.tags_file). This plugin adds a [tags index](https://squidfunk.github.io/mkdocs-material/setup/setting-up-tags/#adding-a-tags-index) into the published website. However, the nested tags feature of Obsidian is not supported by mkdocs-material
     - I also deleted the file "./docs/tags.md" which is served as the [tags index](https://squidfunk.github.io/mkdocs-material/setup/setting-up-tags/#adding-a-tags-index). When I want to reuse this feature, I have to recreate this file
-
-[^7]: <https://squidfunk.github.io/mkdocs-material/reference/diagrams/>
 
 ### Enable plugins
 
@@ -168,3 +156,12 @@ If a post is named other than `index.md`, the filename will be used as the direc
 - [Deploy MkDocs with Material or Material Insiders theme to Cloudflare Pages](https://www.starfallprojects.co.uk/projects/deploy-host-docs/deploy-mkdocs-material-cloudflare/)
 - [Cloudflare Docs | Deploy an Mkdocs site](https://developers.cloudflare.com/pages/framework-guides/deploy-an-mkdocs-site/)
 - [A Guide to Create a Personal Site using Material for MkDocs | codeinsideout](https://www.codeinsideout.com/blog/site-setup/create-site-project/)
+
+[^1]: <https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template>
+[^2]: <https://dg-docs.ole.dev/advanced/fine-grained-access-token/>
+[^3]: <https://obsidian-publisher.netlify.app/obsidian/#upload-configuration>
+[^4]: <https://github.com/ObsidianPublisher/obsidian-github-publisher/discussions/70#discussioncomment-4656676>
+[^5]: <https://docs.github.com/en/actions/managing-workflow-runs/disabling-and-enabling-a-workflow>
+[^7]: <https://squidfunk.github.io/mkdocs-material/reference/diagrams/>
+[^8]: read my [discussion](https://github.com/ObsidianPublisher/obsidian-github-publisher/discussions/131#discussioncomment-5494065) for details
+[^9]: [Latex support · ObsidianPublisher · Discussion #165 (github.com)](https://github.com/orgs/ObsidianPublisher/discussions/165)
