@@ -2,7 +2,7 @@
 aliases: Publish vault with Obsidian Github Publisher and mkdocs
 createdAt: 2023-03-16T01:43:50+01:00
 dg-publish: true
-modifiedAt: 2023-06-14T19:45:25+02:00
+modifiedAt: 2023-06-18T03:13:44+02:00
 title: "Publish vault with Obsidian Github Publisher and mkdocs"
 ---
 # Publish vault with Obsidian Github Publisher and mkdocs
@@ -119,21 +119,24 @@ In `mkdocs.yml`
     - [blog.categories_slugify](https://squidfunk.github.io/mkdocs-material/setup/setting-up-a-blog/?h=slugify#+blog.categories_slugify): applied for "categories in blog". Not available for free user at the moment
     - [tags.tags_slugify](https://squidfunk.github.io/mkdocs-material/setup/setting-up-tags/?h=slugify#+tags.tags_slugify): applied for generating URL-compatible slugs from tags
 
-### Upgrade the GitHub Publisher template repo
+### Automation with GitHub Actions
 
-To keep your template up to date, you should follow [this tutorial](https://obsidian-publisher.netlify.app/mkdocs%20template/#upgrading).
+Update the GitHub Publisher template repo
+- 2023-06-18, in order to keep the template up to date, I set up the GitHub Actions as instructed [here](https://obsidian-publisher.netlify.app/template/actions/#update-updateyml)
+- In my repo "h7b-public-mkdocs"
+    - folder "/.github/workflows", I create [GitHub Actions](https://github.com/features/actions) named `update.yml` by duplicating [the content from the developer's repo](https://github.com/ObsidianPublisher/actions/blob/main/template/update.yml). This action will automatically update the template every 24h
+    - I have to register the repo token as an [encrypted secret for a repository](https://docs.github.com/en/actions/security-guides/encrypted-secrets#creating-encrypted-secrets-for-a-repository). This "secret" is named as "GH_TOKEN". This is mandatory for the action `update.yml` to work.
 
-In my repo "h7b-public-mkdocs"
-- folder "/.github/workflows", there's a [GitHub Actions](https://github.com/features/actions) named "auto_update.yml". This action will automatically update the template every 24h
-- I need to register the repo token as an [encrypted secret for a repository](https://docs.github.com/en/actions/security-guides/encrypted-secrets#creating-encrypted-secrets-for-a-repository). This "secret" is named as "GH_TOKEN".
+Deploy to Netlify
+- Since I disabled the feature [create Graph View of uploaded notes](https://obsidian-publisher.netlify.app/advanced/customization/#graph-view), I may not need to use the action `deploy.yml`. However, I still follow the setup and it still works fine.
 
 ## How to write notes and then publish?
 
 1. Write note in Obsidian
 2. In the note's frontmatter, add the key `dg-publish: true`. This action mark that this specific will be sent to the `trade-bt-mkdocs` repo and then deploy via Netlify
 3. <kbd>CTRL + P</kbd> to open `Command Palette` in Obsidian, search for
-    - command `Github Publisher: Share active file` to send only this active note
-    - or command `Github Publisher: Upload all shared note` to send all the notes with the key `dg-publish: true`
+    - command `Github Publisher: Upload single current active note` to send only the currently active note
+    - or command `Github Publisher: Refresh published and Upload new notes` to update the contents of published notes and send to the repo all of not-uploaded-yet notes.
 
 ## Notes
 
