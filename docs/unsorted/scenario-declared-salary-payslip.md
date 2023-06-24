@@ -1,7 +1,7 @@
 ---
 createdAt: 2023-06-12T21:23:16+02:00
 dg-publish: true
-modifiedAt: 2023-06-15T17:43:11+02:00
+modifiedAt: 2023-06-24T09:24:03+02:00
 title: "Người lao động bị thiệt gì khi kê khai lương gộp thấp?"
 ---
 # Người lao động bị thiệt gì khi kê khai lương gộp thấp?
@@ -46,7 +46,7 @@ Thử minh họa bằng bảng tính:
 - Lợi ích về kinh tế của doanh nghiệp: $P_{dn}=0.215*(S_r-S_f)$
 - Lợi ích trước mắt trong hiện tại của người lao động: $P_{nld}=0.105*(S_r-S_f)$
 - Thiệt hại về kinh tế của người lao động ở 20 năm tới trong tương lai: $L_{nld}=0.75*(S_r-S_f)$
-    - Theo khái niệm về [Time Value of Money](https://www.investopedia.com/articles/03/082703.asp), thiệt hại này khi được quy về giá trị hiện tại sẽ là: $PV(L_{nld})=\frac{0.75*(S_r-S_f)}{(1+i)^n}$
+    - Theo khái niệm về [Time Value of Money](https://www.investopedia.com/articles/03/082703.asp), thiệt hại này khi được quy về giá trị hiện tại sẽ là: $$PV(L_{nld})=\frac{0.75*(S_r-S_f)}{(1+i)^n}$$
 - Khoản lỗ ròng trong hiện tại của người lao động khi khai báo lương thấp: $N=P_{nld}-PV(L_{nld})$
 
 ## Thiệt hại của người lao động
