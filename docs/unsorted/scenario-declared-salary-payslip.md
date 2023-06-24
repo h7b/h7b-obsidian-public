@@ -1,12 +1,12 @@
 ---
 createdAt: 2023-06-12T21:23:16+02:00
 dg-publish: true
-modifiedAt: 2023-06-24T09:24:03+02:00
+modifiedAt: 2023-06-24T10:57:51+02:00
 title: "Người lao động bị thiệt gì khi kê khai lương gộp thấp?"
 ---
 # Người lao động bị thiệt gì khi kê khai lương gộp thấp?
 
-What are the drawbacks for an employee when the employer declares low gross salary on your payslip?
+What are the drawbacks for an employee when the employer declares a low gross salary on his payslip?
 
 ## TLDR
 
