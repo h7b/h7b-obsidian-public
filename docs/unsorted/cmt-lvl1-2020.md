@@ -1,7 +1,7 @@
 ---
 createdAt: 2023-06-15T17:44:20+02:00
 dg-publish: true
-modifiedAt: 2023-06-26T04:16:36+02:00
+modifiedAt: 2023-06-26T04:19:39+02:00
 title: "CMT Level 1 2020"
 ---
 # CMT Level 1 2020
@@ -193,10 +193,6 @@ Price-volume-trend index.
 - calculation: determine daily percentage price change (up/down), multiplied by the total volume for the day
 - this index is more heavily impacted when large percentage price changes occur on heavy volume
 
-Volume oscillator. Its use is to determine when volume is expanding or contracting.
-- Expanding volume implies strength to the existing trend
-- contracting volume implies weakness in the existing trend
-
 Chaikin Accumulation Distribution (AD) index
 - formula (p.225)
 - basic idea: determines where the close prices each day occurs within the daily price range (high-low)
@@ -204,3 +200,8 @@ Chaikin Accumulation Distribution (AD) index
     - when the close is below its midpoint for the day, the result will be a negative number, called `distribution`
 - each daily figure is then cumulated into an index similar to the OBV
 - purpose: similar to the general rules of divergences as the OBV
+
+Volume oscillator. Its use is to determine when volume is expanding or contracting.
+- Expanding volume implies strength to the existing trend
+- contracting volume implies weakness in the existing trend
+
