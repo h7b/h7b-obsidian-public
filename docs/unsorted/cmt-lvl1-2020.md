@@ -295,3 +295,4 @@ Combinations - determining Trend and Trading Range: The ADX and its component pa
 
 Candlestick Charting Essentials.
 
+Though the fundamentals are important
