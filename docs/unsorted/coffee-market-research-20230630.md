@@ -1,7 +1,7 @@
 ---
 createdAt: 2023-06-30T13:02:41+02:00
 dg-publish: true
-modifiedAt: 2023-07-01T12:13:40+02:00
+modifiedAt: 2023-07-01T16:53:37+02:00
 title: "Coffee market research"
 ---
 # Coffee market research
@@ -31,6 +31,24 @@ Chủng loại sản phẩm
     - cà phê hòa tan
     - cà phê hữu cơ
     - cà phê bột
+- Ready-to-drink coffee
+    - cà phê đóng lon (keyword: 2101 AND cà phê)
+    - nước uống có đường, vị cà phê (keyword: 2202.10 AND cà phê)
+
+possible keywords that I tried in Panjiva
+
+| keywords     | nb shipments     | value     |
+|:-----|:-----|:-----|
+| cà phê nhân     |  689    | 83M     |
+| cà phê Arabica     |  1.3k    | 148M     |
+| cà phê Robusta     |  17k    | 2.2B     |
+| cà phê hòa tan     |  1.7k    | 58M     |
+| cà phê rang     |  1.9k    | 249M     |
+| coffee drink     |  1.6k    | 13M     |
+| cà phê lon     |  85    | 2.7M     |
+| 2101 AND cà phê     |  27k    | 1.1B     |
+| 2202.10 AND cà phê   |  46    | 11k     |
+| 0901 AND cà phê   |  25k    | 2.4B     |
 
 ## Notes
 
