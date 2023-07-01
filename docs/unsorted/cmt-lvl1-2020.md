@@ -1,7 +1,7 @@
 ---
 createdAt: 2023-06-15T17:44:20+02:00
 dg-publish: true
-modifiedAt: 2023-06-26T04:19:39+02:00
+modifiedAt: 2023-07-01T04:03:46+02:00
 title: "CMT Level 1 2020"
 ---
 # CMT Level 1 2020
@@ -107,6 +107,7 @@ Welles Wilder (1978) used another formula to calculate a MA that weights the mos
 - Wilder's method of calculating MA is usually used in the average true range (ATR), the relative strength index (RSI), and the directional movement indicator (DMI)
 
 [Average true range (ATR)](https://www.investopedia.com/terms/a/atr.asp) measures market volatility. It shows investors the average range prices swing for an investment over a specified period.
+- example:  if the ATR for an asset is $1.18, its price has an average range of movement of $1.18 per trading day.
 
 Strategies using MA
 - Determining trend
@@ -193,15 +194,104 @@ Price-volume-trend index.
 - calculation: determine daily percentage price change (up/down), multiplied by the total volume for the day
 - this index is more heavily impacted when large percentage price changes occur on heavy volume
 
-Chaikin Accumulation Distribution (AD) index
+Chaikin's Accumulation Distribution (AD) index
 - formula (p.225)
 - basic idea: determines where the close prices each day occurs within the daily price range (high-low)
     - if the close occurs above its midpoint for the day, the result of formula will be a positive number, called `accumulation`
     - when the close is below its midpoint for the day, the result will be a negative number, called `distribution`
-- each daily figure is then cumulated into an index similar to the OBV
+- each daily figure is then multiplied by daily volume and cumulated into an index similar to the OBV
 - purpose: similar to the general rules of divergences as the OBV
+
+Williams Accumulation Distribution (WAD)
+- this indicator use the concept of True Range
+- The True Range use the previous day's close as a benchmark and avoids the problems that arise when a price gaps between days
+    - The True Range high is either the current day's high or the previous day's close, whichever is higher
+    - The True Range low is either the current day's low or the previous day's close, whichever is lower
+    - read: [Average true range (ATR)](https://www.investopedia.com/terms/a/atr.asp)
+- in the WAD
+    - Accumulation occurs on days in which the close is greater than the previous day's close. The price move on these days is the difference between the current day close and the True Range low
+    - Distribution occurs on days when the close is less than the previous day's close. The price move is the difference between the current day close and the True Range high, which is a negative number
+    - Each price move is multiplied by the volume for the respective day, and the resulting figures are cumulated into the WAD index
 
 Volume oscillator. Its use is to determine when volume is expanding or contracting.
 - Expanding volume implies strength to the existing trend
 - contracting volume implies weakness in the existing trend
+
+Chaikin Money Flow (p.227)
+- is an oscillator that is the Chaikin's AD calculation.
+- It is calculated by summing the ADs over the past 21 days and dividing that sum by the total volume over the past 21 days.
+- This produces an oscillator that rises above 0 when an upward trend begins and declines below 0 when the trend turns downward
+- as an oscillator, this tool is used for confirmation, not signal generation
+
+Money Flow Index (MFI)
+- a method of measuring money flow into and out of a stock
+- it considers "up" days and "down" days to determine the flow of money into and out of an equity
+- the money flow on any particular day is the day's typical (average) price multiplied by the daily volume
+- if a day's average price is higher than the previous day's average price, there is positive money flow (PMF). Conversely for negative money flow (NMF)
+- the MFI is an oscillator in range of 0 to 100. When PMF is relatively high, the oscillator approaches 100. When negative money flow is relatively high, MFI approaches 0
+- a level above 80 is often considered overbought and below 20 oversold
+
+In the future market, the number of outstanding futures contracts is called `open interest`.
+- At the expiration of the specific futures market delivery month, the number of contracts reduces to 0
+- Total open interest (OI) is the number of contracts outstanding in all delivery months
+- OI is a tool in estimating the liquidity of most contracts
+
+Confirmation is concerned with determining whether a price trend is continuing or coming to an end.
+
+Momentum deals with the rate at which prices are changing.
+- Momentum measures how quickly the prices are rising or how steeply the trend line is sloping
+- Remind high school calculus: the slope of a line is the first derivative, the change in that slope is the second derivative
+- Hence, momentum is the second derivative of price action over some period.
+
+When momentum is confirming the price trend, a convergence (or confirmation) occurs, when momentum is failing to confirm the price trend slope, a divergence occurs.
+
+Prices never follow a trend in an absolute straight line. Prices oscillate about a central trend, deviating above and below the trend.
+
+Profits are made from anticipating and riding the trend. Indicators and oscillators should only be used as secondary evidence to confirm the trend.
+
+Momentum indexes and oscillators are based on price data, they do not add new information to the analysis. They are simply manipulations of the same data. They are less informative than other indicators such as volume that provide new and different information.
+
+Most common and popular momentum oscillators:
+
+Moving Average Convergence-Divergence (MACD)
+- a variation of the moving average crossover
+- MACD is calculated using the difference between 2 exponential moving averages (EMA). Commonly, 26-period EMA is subtracted from a 12-period EMA
+- A positive MACD indicates that the average price during the past 12 periods exceeds the average price over the past 26 periods
+- The signal line is an EMA of the MACD. A 9-period EMA is the most common
+- A histogram of the difference between the MACD and the signal line over the same period
+- Example: when the MACD is above zero, suggesting an upward trend, buy signals occur when the MACD crosses from below to above the signal line. Downward crossings are not reliable while the trend is upward.
+
+Relative Strength Index (RSI)
+- introduced by Wilder in 1978
+- RSI measures the strength of an issue against its own history of price change by comparing "up" days to "down" days
+- formula (p.242)
+- RIS ranges from a low of 0 (indicating no up days) to a high of 100
+- 14-day period is the most commonly used
+
+Stochastic Oscillator
+- It looks at the most recent close price as a percentage of the price change (high to low) over a specified past window of time. This makes it sensitive to recent action
+- Analyst use the stochastic for trading when the most recent close is the most important price
+- the name of his oscillator has nothing to do with the scientific term stochastic, which means random or nondeterministic.
+- formula (p.242)
+- As in most oscillators, the stochastic works better in trading range market. In a trending market, divergences, trend line breaks generate better signals.
+
+Commodity Channel Index (CCI)
+- developed by Donald Lambert in 1980
+- don't be fooled by the name, this indicator can be used in any market, not just commodity markets
+- the CCI measures the deviations of a security's price from a moving average.
+- CCI is similar to the Stochastic. Using both would be a duplication of effort and liable to create false confidence.
+
+Similarities between Oscillators
+- It is redundant and nonproductive to use many oscillators that essentially tell the same story
+
+Combinations - determining Trend and Trading Range: The ADX and its component parts, the DMI+ and DMI-.
+- A peak in the ADX almost invariably occurs at a trend peak up or down. It is thus useful as an indicator to close a position established during a trend
+- A trough in the ADX occurs when a trend has begun and is beginning to accelerate.
+- The period between a trough and a peak is a period of generally trending prices (p.249)
+- The period between a peak and a trough is a period of decelerating trend that might be trading in a range
+- It seems to be true that very low levels of ADX are periods of no trend and a high possibility of whipsaws
+
+### Chapter 10
+
+Candlestick Charting Essentials.
 
