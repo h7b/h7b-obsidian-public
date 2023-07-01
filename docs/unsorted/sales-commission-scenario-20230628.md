@@ -1,7 +1,7 @@
 ---
 createdAt: 2023-06-28T08:28:18+02:00
 dg-publish: true
-modifiedAt: 2023-07-01T04:55:25+02:00
+modifiedAt: 2023-07-01T04:56:29+02:00
 title: "Sales commission scenario"
 ---
 # Sales commission scenario
@@ -18,14 +18,14 @@ Question: Which target should a salesperson choose?
 
 The calculation is quite simple. You can check this [public ggsheet simulation table](https://docs.google.com/spreadsheets/d/1vp6-_2dE4raeym03sYPakXQfrSXLxJRVntI9yuN23SE/edit?usp=sharing) for the formulae in details.
 
-In the ggsheet above, the 2 sheets `param_salary` and `param_input` were established based information derived from [the given compensation table](https://app.box.com/s/9q6n3e7a1b7fwdqlf3c99wizh66k3jf7).
+In the ggsheet above, the 2 sheets `param_salary` and `param_input` were established based on information derived from [the given compensation table](https://app.box.com/s/9q6n3e7a1b7fwdqlf3c99wizh66k3jf7).
 
 The chart below visualize the difference in total compensation between each pair of possible targets.
 
 ![sales-target-compensation-diff](https://ik.imagekit.io/casa/h7b-dendron/20230701_sales-target-compensation-diff_BZGK0uLSB.svg?updatedAt=1688179752735)
 
 My observations:
-- The monthly target 8 container seems to be a trap for employee. It's the worst for every possible actual number of containers that a salesperson can achieve
+- The monthly target 8 container seems to be a trap for employee. It's the worst case for every possible actual number of containers that a salesperson can achieve
 - When the salesman estimate his possible number (N) is up to 27 containers per month, choose the target 15
 - When 28 <= N <= 38, choose the target 30.
 - When N > 38, choose the target 45
