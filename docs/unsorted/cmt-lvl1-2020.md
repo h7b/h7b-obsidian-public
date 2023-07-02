@@ -1,7 +1,7 @@
 ---
 createdAt: 2023-06-15T17:44:20+02:00
 dg-publish: true
-modifiedAt: 2023-07-01T04:03:46+02:00
+modifiedAt: 2023-07-02T12:32:41+02:00
 title: "CMT Level 1 2020"
 ---
 # CMT Level 1 2020
@@ -296,3 +296,5 @@ Combinations - determining Trend and Trading Range: The ADX and its component pa
 Candlestick Charting Essentials.
 
 Though the fundamentals are important, the shorter the timeframe, the more important the psychological component of the market becomes. A way to measure the emotional aspect of the markets is through technical analysis.
+
+aa
