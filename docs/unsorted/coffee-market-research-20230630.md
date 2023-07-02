@@ -1,7 +1,7 @@
 ---
 createdAt: 2023-06-30T13:02:41+02:00
 dg-publish: true
-modifiedAt: 2023-07-01T16:53:37+02:00
+modifiedAt: 2023-07-02T11:59:14+02:00
 title: "Coffee market research"
 ---
 # Coffee market research
@@ -12,7 +12,7 @@ Báo cáo phân tích thị trường cà phê trinh bày theo biểu đồ về
 
 Nội dung báo cáo gồm :
 1. Tổng quan thị trường về XNk cà phê , doanh thu xuất khẩu của Việt nam .
-2. Những dạng packing size phổ biến nhất cho sp cà phê .
+2. Những dạng packaging size phổ biến nhất cho sp cà phê .
 3. Sản lượng cà phê nhập khẩu vào 2 thị trường Ấn độ và Trung Quốc. DS Top những nhà nhập khẩu cafe ở 2 Quốc Gia này
 
 ## Thoughts
@@ -37,18 +37,20 @@ Chủng loại sản phẩm
 
 possible keywords that I tried in Panjiva
 
-| keywords     | nb shipments     | value     |
-|:-----|:-----|:-----|
-| cà phê nhân     |  689    | 83M     |
-| cà phê Arabica     |  1.3k    | 148M     |
-| cà phê Robusta     |  17k    | 2.2B     |
-| cà phê hòa tan     |  1.7k    | 58M     |
-| cà phê rang     |  1.9k    | 249M     |
-| coffee drink     |  1.6k    | 13M     |
-| cà phê lon     |  85    | 2.7M     |
-| 2101 AND cà phê     |  27k    | 1.1B     |
-| 2202.10 AND cà phê   |  46    | 11k     |
-| 0901 AND cà phê   |  25k    | 2.4B     |
+| keywords           | nb shipments | value |
+|:------------------ |:------------ |:----- |
+| 0901 AND cà phê    | 25k          | 2.4B  |
+| cà phê Robusta     | 17k          | 2.2B  |
+| cà phê Arabica     | 1.3k         | 148M  |
+| cà phê rang        | 1.9k         | 249M  |
+| cà phê nhân        | 689          | 83M   |
+| cà phê hòa tan     | 1.7k         | 58M   |
+| 2101 AND cà phê    | 27k          | 1.1B  |
+| coffee drink       | 1.6k         | 13M   |
+| cà phê lon         | 85           | 2.7M  |
+| 2202.10 AND cà phê | 46           | 11k   |
+
+The shipment values from queries in Panjiva is applied for the timeframe 2018-2023, which are much smaller than the export sales figure ($4B for coffee export in 2022 only) published by the General Statistics Office of Vietnam (Tổng cục Thống kê). Hence I have doubt about the accuracy of the data from Panjiva.
 
 ## Notes
 
