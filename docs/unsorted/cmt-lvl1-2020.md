@@ -295,4 +295,4 @@ Combinations - determining Trend and Trading Range: The ADX and its component pa
 
 Candlestick Charting Essentials.
 
-Though the fundamentals are important
+Though the fundamentals are important, the shorter the timeframe, the more important the psychological component of the market becomes. A way to measure the emotional aspect of the markets is through technical analysis.
