@@ -1,7 +1,7 @@
 ---
 createdAt: 2023-06-30T13:02:41+02:00
 dg-publish: true
-modifiedAt: 2023-07-04T00:36:22+02:00
+modifiedAt: 2023-07-04T00:38:24+02:00
 title: "Coffee market research"
 ---
 # Coffee market research
@@ -50,7 +50,7 @@ possible keywords that I tried in Panjiva
 | cà phê lon         | 85           | 2.7M  |
 | 2202.10 AND cà phê | 46           | 11k   |
 
-The shipment values from queries in Panjiva ($2.4B max, during the period 2018-2023) are much smaller than the export sales figure ($4B for coffee export in 2022 only) published by the General Statistics Office of Vietnam (Tổng cục Thống kê). Hence the limitation in my report is the meaningful of sales value extracted from Panjiva.
+The shipment values from queries in Panjiva (USD 2.4B max, during the period 2018-2023) are much smaller than the export sales figure (USD 4B for coffee export in 2022 only) published by the General Statistics Office of Vietnam (Tổng cục Thống kê). Hence the limitation in my report is the meaningful of sales value extracted from Panjiva.
 
 ## Notes
 
