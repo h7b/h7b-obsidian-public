@@ -1,7 +1,7 @@
 ---
 createdAt: 2023-06-15T17:44:20+02:00
 dg-publish: true
-modifiedAt: 2023-07-02T12:32:41+02:00
+modifiedAt: 2023-07-06T16:53:08+02:00
 title: "CMT Level 1 2020"
 ---
 # CMT Level 1 2020
@@ -296,3 +296,42 @@ Combinations - determining Trend and Trading Range: The ADX and its component pa
 Candlestick Charting Essentials.
 
 Though the fundamentals are important, the shorter the timeframe, the more important the psychological component of the market becomes. A way to measure the emotional aspect of the markets is through technical analysis.
+
+Most technical analysts place great emphasis on a security's closing price, especially if that price closes above resistance or below support (p.262)
+- If a stock closes above a prior high, it means market participants are willing to pay more for it right then, and they are willing to hold it overnight. That means they are committed, and commitment is an extremely important factor in the movement of the financial markets. Or the market has established new demand for the stock
+- An intraday break of support or resistance does not have the same significance as a severing of support or resistance on a close
+
+### Chapter 11
+
+Point-and-Figure Charting (p.264)
+
+### Chapter 12
+
+Introduction to the Wave Principle (p.293)
+
+In 1930s, Elliott discovered that market price movements adhere to a certain pattern composed of what he called `waves`. He called the pattern's characteristics `the Wave Principle` (p.293)
+- Every wave has a starting point and ending point in price and time
+- The pattern is continuous in that the end of one wave marks the beginning of the next wave
+- The basic pattern consists of 5 individual waves that are linked together
+- ![five-wave-sequence](https://ik.imagekit.io/casa/h7b-dendron/Screenshot_2023-07-05_235651_FVy6QE1GF.jpg?updatedAt=1688594246987)
+- motive waves, corrective waves
+- ![complete-market-cycle](https://ik.imagekit.io/casa/h7b-dendron/Screenshot_2023-07-06_000153_pSr0RX1jn.jpg?updatedAt=1688594547304)
+- impulse wave (p.295). Rules to count the impulse waves
+
+Fibonacci relationships
+- Price and time aspects of wave patterns often reflect `Fibonacci ratios`
+- the key Fibonacci ratio is 0.618, aka the `Golden Ratio` or `Golden Mean`. It is represented by the Greek letter `phi`. Its inverse is 1.618
+- In impulse waves, 2nd waves usually make deep retracements near 0.618 times the length of wave one. 4th waves usually make shallow retracements that are often close to 0.382 times the length of wave 3 (p.305)
+- ![fibonacci-retracements](https://ik.imagekit.io/casa/h7b-dendron/Screenshot_2023-07-06_164345_bnPGElzt0.jpg?updatedAt=1688654662464)
+
+### Chapter 13
+
+The Anatomy of Elliott Wave Trading. (p.311)
+
+Analysis and trading represent 2 different skill sets. Although you may be a talented analyst, that does not mean you will be a successful trader.
+
+5 core Elliott wave patterns: impulse wave, ending diagonal, zigzag, flat and triangle.
+
+Motive waves define the direction of the trend. 2 kinds of motive waves: impulse waves and ending diagonals.
+
+Corrective waves travel against the larger trend. 3 kinds of corrective waves: zigzag, flat, triangle.
