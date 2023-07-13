@@ -1,7 +1,7 @@
 ---
 createdAt: 2023-03-16T01:43:53+01:00
 dg-publish: true
-modifiedAt: 2023-04-24T17:43:23+02:00
+modifiedAt: 2023-07-13T23:34:05+02:00
 title: "Trading Journal to Measure Stock Trading Performance With Google Sheets"
 ---
 # Trading Journal to Measure Stock Trading Performance With Google Sheets
@@ -32,8 +32,6 @@ From the article of [Tools to research Vietnam stock market for retail investor]
 - I can simply use the [IMPORTXML](importxml.md#) formula to import the historical data from [investing.com](https://www.investing.com/) into Google Sheets. [Click here](https://blog.coupler.io/googlefinance-function-advanced-tutorial/) to read the tutorial written by `coupler.io`. For this reason, the plan to practice python for web scraping is procrastinated again
 - `IMPORTXML` refreshed automatically only if the document is opened, which is good enough for current usage [^1]
 - Apply [Custom Formatting Numbers](custom-formatting-numbers.md#) to indicate the `millions` by `M`, the `thousands` with a `k`.
-
-[^1]: <https://support.google.com/docs/answer/12188454?hl=en>
 
 2022-12-23 update: TIL
 
@@ -76,11 +74,14 @@ From the article of [Tools to research Vietnam stock market for retail investor]
     - the data from `oderBook` sheet then will be imported into `pnl` sheet for calculation of the trading performance
     - reason: it's more fun when Dad can engage and play together. Dad currently use 3 brokerage services provided by ssi, abs and vcbs.
 - the data source for current market price change from [investing.com](https://www.investing.com/) to [cafef.vn](https://cafef.vn/). Reason: much more stable when crawling price data using the `importxml` function
-- update the custom formula to separate the performance by brokerage account, to take into account of 2 transaction type `cash dividend` and `stock dividend`
+- update the custom formula to take into account of the transaction type `stock dividend` when calculating `costOfGoodsSold` and `realizedGainByTicker`.
 
 2023-04-24 update:
 - separate the `pnl_daily` sheet into a different file. I hope this could increase the performance of the calculation in main trading journal spreadsheet
 - create a `Looker Studio` report with both `desktopView` and `mobileView` to visualize the movement of portfolio's performance
+
+2023-07-13 update:
+- update the custom formula to take into account of the transaction type `cash dividend` when calculating `averageCostOfUnsold` and `realizedGainByTicker`.
 
 ## Related
 
@@ -93,3 +94,5 @@ From the article of [Tools to research Vietnam stock market for retail investor]
   - [Youtube | Google Sheets - Python API, Read & Write Data](https://www.youtube.com/watch?v=4ssigWmExak)
   - [Youtube | Google Colab Tutorial - Google Sheets, Read & Write Data](https://www.youtube.com/watch?v=cN7W2EPM-dw)
   - [Youtube | Google Colab Tutorial - Fuzzy Match Lookup with Google Sheets Data Using Python Fuzzy Pandas](https://www.youtube.com/watch?v=M3JYGiM_Xm8)
+
+[^1]: <https://support.google.com/docs/answer/12188454?hl=en>
