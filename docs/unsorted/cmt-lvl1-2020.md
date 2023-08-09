@@ -1,8 +1,9 @@
 ---
 createdAt: 2023-06-15T17:44:20+02:00
 dg-publish: true
-modifiedAt: 2023-07-06T16:53:08+02:00
+modifiedAt: 2023-08-05T04:01:50+02:00
 title: "CMT Level 1 2020"
+topic: finance
 ---
 # CMT Level 1 2020
 
@@ -267,6 +268,7 @@ Relative Strength Index (RSI)
 - formula (p.242)
 - RIS ranges from a low of 0 (indicating no up days) to a high of 100
 - 14-day period is the most commonly used
+- related note: [[rsi|Relative Strength Index RSI]]
 
 Stochastic Oscillator
 - It looks at the most recent close price as a percentage of the price change (high to low) over a specified past window of time. This makes it sensitive to recent action

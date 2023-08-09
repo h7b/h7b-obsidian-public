@@ -1,7 +1,7 @@
 ---
 createdAt: 2023-03-16T01:43:53+01:00
 dg-publish: true
-modifiedAt: 2023-07-21T02:32:00+02:00
+modifiedAt: 2023-08-09T02:16:23+02:00
 title: "Trading Journal to Measure Stock Trading Performance With Google Sheets"
 ---
 # Trading Journal to Measure Stock Trading Performance With Google Sheets
@@ -84,8 +84,14 @@ From the article of [Tools to research Vietnam stock market for retail investor]
 - update the custom formula to take into account of the transaction type `cash dividend` when calculating `averageCostOfUnsold` and `realizedGainByTicker`.
 
 2023-07-21:
-- create a new custom formula `getClosePrice` using public API from [TCBS](https://www.tcbs.com.vn/en_US/home) to retrieve the `closing price` instead of relying on [IMPORTXML](https://support.google.com/docs/answer/3093342?hl=en) formula to scrape data from [cafef](https://cafef.vn/thi-truong-chung-khoan.chn).
+- create a new custom formula `getClosePriceTcbs` using public API from [TCBS](https://www.tcbs.com.vn/en_US/home) to retrieve the `closing price` instead of relying on [IMPORTXML](https://support.google.com/docs/answer/3093342?hl=en) formula to scrape data from [cafef](https://cafef.vn/thi-truong-chung-khoan.chn).
 - The code was inspired by [this issue from vnstock](https://github.com/thinh-vu/vnstock/issues/10) and the [vn-stocks repo](https://github.com/telosma/vn-stocks)
+
+2023-07-25:
+- create a new custom formula `getClosePriceSsi` using public API from [SSI](https://iboard.ssi.com.vn/) to retrieve the `closing price`. Since the responses from the API of TCBS are not reliable (i.e. the response was not updated on real-time )
+
+2023-08-09:
+- create a new custom formula `getClosePriceEntrade` using public API from [DNSE](https://www.dnse.com.vn/) to retrieve the `closing price`. Since the API of SSI requires to manual refresh the `device-id` parameter every 5 days
 
 ## Related
 
