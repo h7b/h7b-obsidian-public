@@ -118,8 +118,9 @@ plugins:
       custom-attributes: 'assets/css/custom_attributes.css'
   - custom-attributes:
       file: 'assets/css/custom_attributes.css'
-#  - tags:
-#      tags_file: tags.md
+  - tags:
+      enabled: false
+      tags_file: tags.md
 #  - encryptcontent:
 #      title_prefix: '🔐'
 #      summary: 'Page privée'
