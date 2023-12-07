@@ -1,9 +1,10 @@
 ---
 createdAt: 2023-03-16T01:43:53+01:00
 dg-publish: true
-modifiedAt: 2023-08-09T02:16:23+02:00
-title: "Trading Journal to Measure Stock Trading Performance With Google Sheets"
+modifiedAt: 2023-10-16T02:35:15+02:00
+title: Trading Journal to Measure Stock Trading Performance With Google Sheets
 ---
+
 # Trading Journal to Measure Stock Trading Performance With Google Sheets
 
 I want to create a spreadsheet to monitor the performance of trading stocks in Vietnam market.
@@ -25,28 +26,28 @@ DONE
 
 ## Thoughts
 
-From the article of [Tools to research Vietnam stock market for retail investor](vn-stock-market-research.md#), I learned that there is no free API data feed for hobbyist to play with the end-of-day historical price data of Vietnam' securities. So I intend to crawl data from [investing.com](https://www.investing.com/) using [investiny](https://github.com/alvarobartt/investiny) package then import into Google Sheets.
+From the article of [Tools to research Vietnam stock market for retail investor](vn-stock-market-research.md), I learned that there is no free API data feed for hobbyist to play with the end-of-day historical price data of Vietnam' securities. So I intend to crawl data from [investing.com](https://www.investing.com/) using [investiny](https://github.com/alvarobartt/investiny) package then import into Google Sheets.
 
 2022-12-09 update: TIL
 
-- I can simply use the [IMPORTXML](importxml.md#) formula to import the historical data from [investing.com](https://www.investing.com/) into Google Sheets. [Click here](https://blog.coupler.io/googlefinance-function-advanced-tutorial/) to read the tutorial written by `coupler.io`. For this reason, the plan to practice python for web scraping is procrastinated again
+- I can simply use the [IMPORTXML](importxml.md) formula to import the historical data from [investing.com](https://www.investing.com/) into Google Sheets. [Click here](https://blog.coupler.io/googlefinance-function-advanced-tutorial/) to read the tutorial written by `coupler.io`. For this reason, the plan to practice python for web scraping is procrastinated again
 - `IMPORTXML` refreshed automatically only if the document is opened, which is good enough for current usage [^1]
-- Apply [Custom Formatting Numbers](custom-formatting-numbers.md#) to indicate the `millions` by `M`, the `thousands` with a `k`.
+- Apply [Custom Formatting Numbers](custom-formatting-numbers.md) to indicate the `millions` by `M`, the `thousands` with a `k`.
 
 2022-12-23 update: TIL
 
 - need to refactor formula in `pnl` sheet since `orderBook` now has 3 types of transaction (buy, sell, stock dividend)
-- add a new column for `income tax on selling securities`. Learn the calculation at [Tax Basics for Investors in Vietnam](tax-investors-vn.md#)
+- add a new column for `income tax on selling securities`. Learn the calculation at [Tax Basics for Investors in Vietnam](tax-investors-vn.md)
 - Calculate the column `rate of return (unrealized) (weighted by cost of purchasing)`
-  - use [SUMPRODUCT](sumproduct.md#) combined with [ABS](https://support.google.com/docs/answer/3093459?hl=en) formula to get the sum of absolute value of a mixture of positive and negative numbers
+  - use [SUMPRODUCT](sumproduct.md) combined with [ABS](https://support.google.com/docs/answer/3093459?hl=en) formula to get the sum of absolute value of a mixture of positive and negative numbers
   - `SUMPRODUCT(ABS($E$2:$E))`
-  - in [SUMPRODUCT](sumproduct.md#.md#) formula, when `array2` is omitted as above, the formula will calculate the sum of the products of the 2 arrays: `array1` and `{1,1,1,...}` with same length as `array1`.
+  - in [SUMPRODUCT](sumproduct.md) formula, when `array2` is omitted as above, the formula will calculate the sum of the products of the 2 arrays: `array1` and `{1,1,1,...}` with same length as `array1`.
   - Read more about [How To Get Absolute Value In Google Sheets](https://www.alphr.com/absolute-value-google-sheets/)
 
 2022-12-24 update:
 
 - refactor the formula to calculate `Realized Gain/Loss`, applying the accounting FIFO (first in, first out). It means that the shares I bought earliest will be the shares I sell first. I also wrote a note about [[fifo-cost-basis|how to compute the cost basis of stocks with FIFO method]]
-- add a [dedicated note](data-structure.md#) explaining how did I record transaction into `orderBook`.
+- add a [dedicated note](data-structure.md) explaining how did I record transaction into `orderBook`.
 
 2023-01-03 update:
 
@@ -57,7 +58,7 @@ From the article of [Tools to research Vietnam stock market for retail investor]
 
 2023-01-06 update:
 
-- Refactor the formula to calculate the [Average Cost per Share](average-cost-per-share.md#)
+- Refactor the formula to calculate the [Average Cost per Share](average-cost-per-share.md)
 
 2023-01-16 update:
 
@@ -92,6 +93,31 @@ From the article of [Tools to research Vietnam stock market for retail investor]
 
 2023-08-09:
 - create a new custom formula `getClosePriceEntrade` using public API from [DNSE](https://www.dnse.com.vn/) to retrieve the `closing price`. Since the API of SSI requires to manual refresh the `device-id` parameter every 5 days
+
+2023-09-19:
+- create new custom formula:
+    - `tradingFeeByTickerBrokerDate`: calculate the total trading fee of filtered transactions by ticker-brokerageAccount-date
+    - `incomeTaxByTickerBrokerDate`: calculate the total income tax (on selling securities and receiving dividends) of filtered transactions by ticker-brokerageAccount-date
+    - `costBasisByTransaction`: calculate the cost basis of a specific ticker (FIFO method), from filtered transactions by ticker-brokerageAccount-date
+    - `realizedGainByTransaction`: calculate the realized gain/loss from the most recent transaction, filtered by ticker-brokerageAccount-date
+- refactor function `fifoCalc` to take into account of `tradingFee`, `incomeTaxOnSale`, `incomeTaxOnDividend`.
+- `fifoCalc` now can calculate the realized gain and the cost basis from only the most recent `sell` transaction.
+- in order to solve the issue of multiple transactions of the same type (eg. `sell`) of a specific ticker in a brokerage account, when i enter data of transactions, the `date` field should follow [ISO 8601](https://www.ionos.com/digitalguide/websites/web-development/iso-8601/), which is `yyyy-MM-dd'T'HH:mm:ss.SSSXXX`, for example, `2000-10-31T01:30:00.000-05:00`.
+
+2023-09-22:
+- created an entry data form using [Tally.so](https://tally.so/) to reduce error when user input data into spreadsheet. However, the end user cannot review what he submitted. This issue can be solve using the feature `Respondent email notifications`, which is available only in [Pro plan $29/month](https://tally.so/pricing)
+- This lead me to the idea of create a form using [Glide](https://www.glideapps.com/), a no-code tool. With this web app, the respondent can see his recent submission.
+- But another issue arises, which is I don't receive any notifications to know when we have new data entry via Glide web app. I will be happy if I receive an email when there is new submission. However, the [send-email Action](https://www.glideapps.com/docs/automation/actions/send-email) is only available for [paid plans](https://www.glideapps.com/pricing), starting at $25/month.
+- Glide has integrated [Zapier Action](https://www.glideapps.com/docs/automation/actions/zapier-action), which can be used as a workaround. However the [Free plan](https://zapier.com/pricing) from Zapier is limited at 100 tasks/month.
+- Reading the docs of Glide, I discover that they also have [webhook](https://www.glideapps.com/docs/automation/actions/webhook) to send data to other apps from Glide. This lead me to [make.com](https://www.make.com/en), which is similar to Zapier but with better [Free plan](https://www.make.com/en/pricing) 1,000 Ops/month
+- The config to connect Glide and Make is quite straight forward with [this tutorial](https://www.make.com/en/help/app/glide). But instead of sending email when new submission arrives, I choose to connect a Telegram bot with Make. Now I will receive a notification in a Telegram private channel for new data entry.
+
+2023-10-09:
+- Replace [getValues()](https://developers.google.com/apps-script/reference/spreadsheet/range#getvalues) by [getDisplayValues()](https://developers.google.com/apps-script/reference/spreadsheet/range#getdisplayvalues) in the user-defined function `recordValues()`
+- Reason: This change will retrieve the displayed values as strings, rather than the formula expressions. By working with the displayed values, I expect to reduce the likelihood of encountering errors caused by unresolved formulas (`#ERROR!`, `#NAME?`, `#VALUE!`), which usually happened in previous version when duplicating values from spreadsheet `pnl` to a backup spreadsheet using an Apps Script background task.
+
+2023-10-16:
+- Applied [this tutorial](https://www.youtube.com/watch?v=nLW8SerwnJo) to [[search-box|create a search box in spreadsheet]]. I intend to use this feature to filter data from `orderBook` sheet.
 
 ## Related
 
