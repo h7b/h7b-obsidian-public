@@ -1,10 +1,12 @@
 ---
-aliases: [root]
-createdAt: 2023-03-16T01:43:53+01:00
+aliases:
+  - root
 dg-publish: true
-modifiedAt: 2023-06-13T23:27:45+02:00
-title: "Hey 👋"
+title: Hey 👋
+created: 2023-03-16T01:43:53+01:00
+updated: 2023-12-07T02:20:50+01:00
 ---
+
 # Hey 👋
 
 Welcome to my [digital garden](https://maggieappleton.com/garden-history).

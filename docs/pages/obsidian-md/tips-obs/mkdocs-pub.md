@@ -1,19 +1,21 @@
 ---
-aliases: Publish vault with Obsidian Github Publisher and mkdocs
-createdAt: 2023-03-16T01:43:50+01:00
+aliases:
+  - Publish vault with Obsidian Github Publisher and mkdocs
+created: 2023-03-16T01:43:50+01:00
 dg-publish: true
-modifiedAt: 2023-06-18T03:13:44+02:00
-title: "Publish vault with Obsidian Github Publisher and mkdocs"
+title: Publish vault with Obsidian Github Publisher and mkdocs
+updated: 2023-12-07T03:22:32+01:00
 ---
+
 # Publish vault with Obsidian Github Publisher and mkdocs
 
-In a beautiful day, I have interest to publish [[../../../unsorted/stock-trading-spreadsheet/index|a trading journal]] using [mkdocs](https://www.mkdocs.org/). In my setup, I use the [GitHub Publisher](github-publisher.md#) plugin to send the notes written in Obsidian, into a GitHub repository, then deploy on [Netlify](https://www.netlify.com/) and [Cloudflare Pages](https://pages.cloudflare.com/).
+In a beautiful day, I have interest to publish [[../../../unsorted/stock-trading-spreadsheet/index|a trading journal]] using [mkdocs](https://www.mkdocs.org/). In my setup, I use the [GitHub Publisher](github-publisher.md) plugin to send the notes written in Obsidian, into a GitHub repository, then deploy on [Netlify](https://www.netlify.com/) and [Cloudflare Pages](https://pages.cloudflare.com/).
 
 ## Steps to install and configure
 
 ### with Netlify
 
-1. Create a new repository from [this template](https://github.com/ObsidianPublisher/publisher-template-netlify) [^1]. This new repo will be called `trade-bt-mkdocs`
+1. Create a new repository from cloning [this template](https://github.com/ObsidianPublisher/publisher-template-netlify) .[^1] This new repo will be called `trade-bt-mkdocs`
 2. Connect my Netlify account to the repo `trade-bt-mkdocs` and deploy via Netlify
    - Retrieve the URL of deployed site in `Domain settings` within Netlify
    - Read the [tutorial in details](https://obsidian-publisher.netlify.app/getting%20started/publishing/) to learn how to deploy
@@ -21,9 +23,9 @@ In a beautiful day, I have interest to publish [[../../../unsorted/stock-trading
    - Change: `obsidiantools==0.10.0` -> `obsidiantools==0.8.1`. Reason: Netlify only support python 3.8
 4. Configure in "GitHub Publisher" plugin settings
     - [Create a personal access token (classic)](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) then paste it into the "GitHub Token" field in "GitHub Configuration" tab. Also change "Repo Name", "Github Username"
-    - I did not choose the new `fine-grained personal access token` as instructed [^2], because it requires an expiry date within 1 year, and I don't want to set an expiry date for this token
+    - I did not choose the new `fine-grained personal access token` as instructed ,[^2] because it requires an expiry date within 1 year, and I don't want to set an expiry date for this token
     - In `Plugin Settings` tab,
-        - change `Share Key` to `dg-publish`. Reason: I want to use the same publishing keyword with [Obsidian Digital Garden](digital-garden.md#)
+        - change `Share Key` to `dg-publish`. Reason: I want to use the same publishing keyword with [Obsidian Digital Garden](digital-garden.md)
         - change `Excluded Folder` to `99_template`. Reason: I don't need to publish any notes within this folder
     - In `Upload Configuration` tab,
         - set `Folder behavior` to `Obsidian Path`. I want to replicate the folder structure of Obsidian vault to the published site [^3]
@@ -31,7 +33,7 @@ In a beautiful day, I have interest to publish [[../../../unsorted/stock-trading
         - disable the toggle `Set the key where to get the value of the filename`. Reason: I want to preserve the note's filename as is when upload to repo. If I toggle on, the note's filename will be changed according the `title` key in the note frontmatter
     - In `Content's conversion` tab,
         -  enable `Internal Links`
-        - disable `[[Wikilinks]] to [MDlinks](links)`. Reason: possible error when mkdocs-material render anchor link from mdlink syntax [^8]
+        - disable `[[Wikilinks]] to [MDlinks](links)`. Reason: possible error when mkdocs-material render anchor link from mdlink syntax [^4]
         - disable `Convert internal links into unpublished notes`
 5. Close and reopen Obsidian to assure that the changes are executed. Because I also encounter the same error as this user's [issue](https://github.com/ObsidianPublisher/obsidian-github-publisher/discussions/63#discussioncomment-4599564)
 6. Configure the file `mkdocs.yml` in the repo `trade-bt-mkdocs`
@@ -46,21 +48,19 @@ In a beautiful day, I have interest to publish [[../../../unsorted/stock-trading
     - Update 20230114, according this [reply of plugin developer](https://github.com/ObsidianPublisher/obsidian-github-publisher/discussions/70#discussioncomment-4678758), she has recently updated the template. Please follow her [updated tutorial](https://obsidian-publisher.netlify.app/advanced%20setup/customization/#comments) to learn how to enable/disable the `Comments` section for the whole website or for a specific page only
     - Read [here](https://squidfunk.github.io/mkdocs-material/reference/?h=template#setting-the-page-template) to understand why the key `template: custom.html` works
     - In this [section](https://squidfunk.github.io/mkdocs-material/customization/#extending-the-theme), the author explain how to extend the `mkdocs-material` using the `custom_dir` setting, what's the meaning of folder `overrides`, `partials`
-    - (obsolete, update 20230114) in GitHub repo, path `trade-bt-mkdocs/overrides/`, duplicate the `main.html` as `page_comments.html`. After that, in the note (page) where I want to enable the comments, I will add the key `template: page_comments.html` in its frontmatter. [^4]
-8. (Optional) Disable the workflow `Building Mkdocs Page` in GitHub Actions [^5], since I deploy solely via Netlify. This only helps the repo status clean. It does not affect on the success of build process.
+    - (obsolete, update 20230114) in GitHub repo, path `trade-bt-mkdocs/overrides/`, duplicate the `main.html` as `page_comments.html`. After that, in the note (page) where I want to enable the comments, I will add the key `template: page_comments.html` in its frontmatter. [^5]
+8. (Optional) Disable the workflow `Building Mkdocs Page` in GitHub Actions ,[^6] since I deploy solely via Netlify. This only helps the repo status clean. It does not affect on the success of build process.
 9. Create a custom front page
     - Follow this [issue](https://github.com/squidfunk/mkdocs-material/issues/1996) and replicate a `home.html` with examples from [up42-py](https://github.com/up42/up42-py/blob/master/docs/theme_override_home/home.html), [le-ref-architecture-doc](https://github.com/binbashar/le-ref-architecture-doc/blob/master/material/overrides/home.html), [mkdocs-material](https://github.com/squidfunk/mkdocs-material/blob/master/src/.overrides/home.html)
-10. 2023-06-14 I learned that GithubPublisher dev changed the Javascript loading order, so in `extra_javascript` I need to reorder the line `https://cdn.jsdelivr.net/gh/ObsidianPublisher/assets@main/dist/javascript.js` into first line [^9]
+10. 2023-06-14 I learned that GithubPublisher dev changed the Javascript loading order, so in `extra_javascript` I need to reorder the line `https://cdn.jsdelivr.net/gh/ObsidianPublisher/assets@main/dist/javascript.js` into first line [^7]
 
 ### with Cloudflare Pages
 
 1. Create a new repository from [this template](https://github.com/ObsidianPublisher/obsidian-mkdocs-publisher-template/). This new repo will be called `trade-bt-mkdocs`
 2. Connect my Cloudflare account to the repo `trade-bt-mkdocs` and deploy via [Cloudflare Pages](https://pages.cloudflare.com/)
    - Retrieve the URL of deployed site in `Domain settings` within Cloudflare
-3. Since Cloudflare Pages support only up to `python 3.7` [^6], i need to modify the file `trade-bt-mkdocs/runtime.txt` from `3.8` to `3.7`. And also modify the `requirements.txt` as in configuration step with Netlify
+3. Since Cloudflare Pages support only up to `python 3.7` ,[^8] i need to modify the file `trade-bt-mkdocs/runtime.txt` from `3.8` to `3.7`. And also modify the `requirements.txt` as in configuration step with Netlify
 4. From step 4 through 9, they are similar to the Netlify part.
-
-[^6]: <https://developers.cloudflare.com/pages/framework-guides/deploy-an-mkdocs-site/>
 
 ## Customize GitHub Publisher template repo
 
@@ -75,7 +75,7 @@ In `mkdocs.yml`
 - disable plugin [git-revision-date-localized](https://github.com/timvink/mkdocs-git-revision-date-localized-plugin)
     - reason: I don't want to show the "Last update status" in the footer of published page
 - disable plugin [mermaid2](https://github.com/fralau/mkdocs-mermaid2-plugin)
-    - reason: Material for MkDocs integrates with [Mermaid.js](https://mermaid-js.github.io/mermaid/) natively since v8.2 [^7], we don't need to use a 3rd party plugin
+    - reason: Material for MkDocs integrates with [Mermaid.js](https://mermaid-js.github.io/mermaid/) natively since v8.2 ,[^9] we don't need to use a 3rd party plugin
 - disable plugin [encryptcontent](https://github.com/unverbuggt/mkdocs-encryptcontent-plugin)
     - reason: I don't need the feature to have password protected articles and pages
 - disable the [option to visualize the Graph View](https://obsidian-publisher.netlify.app/advanced%20setup/customization/#graph-view), similar to "Graph View" in Obsidian
@@ -152,7 +152,7 @@ If a post is named other than `index.md`, the filename will be used as the direc
 
 ## Related
 
-- [Mkdocs Publish Obsidian](mkdocs-publish-obsidian.md#)
+- [Mkdocs Publish Obsidian](mkdocs-publish-obsidian.md)
 - [Obsidian Mkdocs Publisher : A free publish alternative](https://forum.obsidian.md/t/obsidian-mkdocs-publisher-a-free-publish-alternative/29540)
     - in this thread in Obsidian forum, the plugin owner explain her changelog
 - [Deploy MkDocs with Material or Material Insiders theme to Netlify](https://www.starfallprojects.co.uk/projects/deploy-host-docs/deploy-mkdocs-material-netlify/)
@@ -162,9 +162,10 @@ If a post is named other than `index.md`, the filename will be used as the direc
 
 [^1]: <https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template>
 [^2]: <https://dg-docs.ole.dev/advanced/fine-grained-access-token/>
-[^3]: <https://obsidian-publisher.netlify.app/obsidian/#upload-configuration>
-[^4]: <https://github.com/ObsidianPublisher/obsidian-github-publisher/discussions/70#discussioncomment-4656676>
-[^5]: <https://docs.github.com/en/actions/managing-workflow-runs/disabling-and-enabling-a-workflow>
-[^7]: <https://squidfunk.github.io/mkdocs-material/reference/diagrams/>
-[^8]: read my [discussion](https://github.com/ObsidianPublisher/obsidian-github-publisher/discussions/131#discussioncomment-5494065) for details
-[^9]: [Latex support · ObsidianPublisher · Discussion #165 (github.com)](https://github.com/orgs/ObsidianPublisher/discussions/165)
+[^3]: <https://obsidian-publisher.netlify.app/obsidian/>#upload-configuration>
+[^4]: read my [discussion](https://github.com/ObsidianPublisher/obsidian-github-publisher/discussions/131#discussioncomment-5494065) for details
+[^5]: <https://github.com/ObsidianPublisher/obsidian-github-publisher/discussions/70>#discussioncomment-4656676>
+[^6]: <https://docs.github.com/en/actions/managing-workflow-runs/disabling-and-enabling-a-workflow>
+[^7]: [Latex support · ObsidianPublisher · Discussion #165 (github.com)](https://github.com/orgs/ObsidianPublisher/discussions/165)
+[^8]: <https://developers.cloudflare.com/pages/framework-guides/deploy-an-mkdocs-site/>
+[^9]: <https://squidfunk.github.io/mkdocs-material/reference/diagrams/>
