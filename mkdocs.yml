@@ -1,21 +1,27 @@
 # Project information
 site_name: h7b
-site_description: h7b public vault
+site_name: Kool Casa
 site_author: h7b
 site_url: https://h7b1.netlify.app
+site_description: >-
+    Public notes and blog of h7b
 
 # Repository
 repo_name: h7b/h7b-public-mkdocs
 repo_url: https://github.com/h7b/h7b-public-mkdocs
 edit_uri: ""
 
+# Copyright
+copyright: Copyright &copy; 2021 - 2024 Huy TRAN
+
 # Configuration
 theme:
     name: 'material'
     custom_dir: overrides    
-    favicon: assets/meta/favicons.png
+    favicon: assets/meta/favicons.ico
     icon:
-        logo: material/library
+        # logo: material/library
+        logo: assets/meta/logo.png
         repo: fontawesome/brands/git-alt
     font:
         text: Roboto
@@ -31,20 +37,21 @@ theme:
         primary: indigo
         accent: indigo
         toggle:
-          icon: material/toggle-switch-off-outline
+          icon: material/toggle-switch
           name: Switch to dark mode
     # Dark mode
       - media: "(prefers-color-scheme: dark)"
         scheme: slate
-        primary: indigo
+        primary: black
         accent: indigo
         toggle:
-          icon: material/toggle-switch
+          icon: material/toggle-switch-off
           name: Switch to light mode
     features:
         - navigation.indexes
         - navigation.top
         - navigation.tabs
+        - navigation.tabs.sticky
         - navigation.expand
         - navigation.footer
         - navigation.instant
@@ -98,7 +105,14 @@ markdown_extensions:
           #format: !!python/name:mermaid2.fence_mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
 plugins:
-  - blog
+  - blog:
+      blog_dir: blog
+      post_dir: "{blog}/posts"
+      post_date_format: full
+      post_url_date_format: yyyy
+      post_url_format: "{date}/{slug}"
+      archive_url_format: "{date}"
+      categories: false
   - search
 #  - meta-descriptions
 #  - git-revision-date-localized:
@@ -118,18 +132,18 @@ plugins:
       custom-attributes: 'assets/css/custom_attributes.css'
   - custom-attributes:
       file: 'assets/css/custom_attributes.css'
-  - tags:
-      enabled: false
-      tags_file: tags.md
-#  - encryptcontent:
-#      title_prefix: '🔐'
-#      summary: 'Page privée'
-#      placeholder: 'Mot de passe'
-#      decryption_failure_message: 'Mot de passe invalide !'
-#      encryption_info_message: "Vous n'avez pas accès à cette page"
-#      search_index: 'encrypted'
-#      password_button: True
-#      password_button_text: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" height="1em" width="1em"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M416 32h-64c-17.67 0-32 14.33-32 32s14.33 32 32 32h64c17.67 0 32 14.33 32 32v256c0 17.67-14.33 32-32 32h-64c-17.67 0-32 14.33-32 32s14.33 32 32 32h64c53.02 0 96-42.98 96-96V128C512 74.98 469 32 416 32zM342.6 233.4l-128-128c-12.51-12.51-32.76-12.49-45.25 0c-12.5 12.5-12.5 32.75 0 45.25L242.8 224H32C14.31 224 0 238.3 0 256s14.31 32 32 32h210.8l-73.38 73.38c-12.5 12.5-12.5 32.75 0 45.25s32.75 12.5 45.25 0l128-128C355.1 266.1 355.1 245.9 342.6 233.4z"/></svg>'
+ #  - tags:
+ #      enabled: true
+ #      tags_file: tags.md
+ # - encryptcontent:
+ #     title_prefix: '🔐'
+ #     summary: 'Page privée'
+ #     placeholder: 'Mot de passe'
+ #     decryption_failure_message: 'Mot de passe invalide !'
+ #     encryption_info_message: "Vous n'avez pas accès à cette page"
+ #     search_index: 'encrypted'
+ #     password_button: True
+ #     password_button_text: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" height="1em" width="1em"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M416 32h-64c-17.67 0-32 14.33-32 32s14.33 32 32 32h64c17.67 0 32 14.33 32 32v256c0 17.67-14.33 32-32 32h-64c-17.67 0-32 14.33-32 32s14.33 32 32 32h64c53.02 0 96-42.98 96-96V128C512 74.98 469 32 416 32zM342.6 233.4l-128-128c-12.51-12.51-32.76-12.49-45.25 0c-12.5 12.5-12.5 32.75 0 45.25L242.8 224H32C14.31 224 0 238.3 0 256s14.31 32 32 32h210.8l-73.38 73.38c-12.5 12.5-12.5 32.75 0 45.25s32.75 12.5 45.25 0l128-128C355.1 266.1 355.1 245.9 342.6 233.4z"/></svg>'
   - callouts
   - glightbox
 hooks:
