@@ -1,13 +1,9 @@
 ---
 title: Mua vs Thuê nhà - Bạn quyết định dựa vào yếu tố nào?
-date:
-  created: 2023-03-16T01:43:53+01:00
-  updated: 2023-12-07T02:14:20+01:00
-created: 2023-03-16T01:43:53+01:00
-updated: 2023-12-07T02:17:51+01:00
+created: 2023-03-16T07:43:53+07:00
+updated: 2024-06-21T17:24:12+07:00
 dg-publish: true
 ---
-
 # Mua vs Thuê nhà - Bạn quyết định dựa vào yếu tố nào?
 
 ## **Kịch bản**:
@@ -55,7 +51,7 @@ Screencap kết quả từ [mô hình](https://my.causal.app/models/47260)<br>
 > - % tăng giá nhà kỳ vọng là 6%/năm thì sẽ không hợp lý nếu bất động sản là nhà chung cư
 > - lợi suất đầu tư kỳ vọng sẽ cao hơn nhiều so với 12%/năm nếu bạn tự tin rằng mình hiểu biết về các công cụ tài chính và có thể thắng XX lần lợi suất đầu tư trung bình của thị trường mà bạn tham gia
 
-> Note : payment scheme for references at [EMI](equated-monthly-installment.md)
+> Note : payment scheme for references at [EMI](equated-monthly-installment.md#)
 
 # Other buy vs rent what-if scenario and inputs to consider
 
